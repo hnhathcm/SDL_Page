@@ -52,13 +52,13 @@ const About = () => {
       <section className="py-24 px-6 max-w-[1280px] mx-auto grid md:grid-cols-2 gap-24">
         <FadeIn>
           <span className="text-secondary mb-4 block uppercase tracking-widest text-xs">01 / OUR VISION</span>
-          <h3 className="text-2xl font-bold mb-6">To empower the next billion digital citizens.</h3>
-          <p className="text-on-surface-variant">We look beyond the horizon to see a Southeast Asia that is interconnected and technologically sovereign.</p>
+          <h3 className="text-2xl font-bold mb-6">To build a stronger foundation for the next generation of startups in Southeast Asia.</h3>
+          <p className="text-on-surface-variant">We believe ambitious founders need more than capital to scale. SonDoong Labs supports ventures through operational execution, strategic guidance, talent networks, and long-term partnerships that help businesses grow sustainably.</p>
         </FadeIn>
         <FadeIn delay={200}>
           <span className="text-secondary mb-4 block uppercase tracking-widest text-xs">02 / OUR MISSION</span>
-          <h3 className="text-2xl font-bold mb-6">Bridging high-finance strategy with ground energy.</h3>
-          <p className="text-on-surface-variant">We combine institutional rigor with the agile, relationship-driven culture of the region.</p>
+          <h3 className="text-2xl font-bold mb-6">To work alongside founders in building scalable and resilient businesses.</h3>
+          <p className="text-on-surface-variant">We support startups across growth, operations, talent, positioning, and fundraising through hands-on execution and ecosystem connectivity, helping ventures overcome scaling challenges from early stage to expansion.</p>
         </FadeIn>
       </section>
 
