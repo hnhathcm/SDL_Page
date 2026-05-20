@@ -2,12 +2,12 @@ import { FadeIn } from "./Home"; // Assuming you kept the FadeIn component in a 
 
 const About = () => {
   const team =[
-    { name: "Hoang Nhat (Leo)", role: "CO-FOUNDER", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCI9QpoNRV-27b1v-dhdU3IwQeqH8j2Gz4LvwhZXGhW5m3sX6MZaO3Up-El7ZkJaXXJzQqOvUyFaIuLWM7iNqq9c4wSE11fN4gglfEk1E5JqBCdGoh5sXncUiuPKRFWiQGI16C34alp62SyYtXWgWTM2P2FF8w9l4IZnjxfcz_e15wZEIxXJpwq3gpcVcft04Ioj2VpRx7T_VbjBJa3auNrkDh__N0MZGOO5wyeyIwfLKsqoAJN0AJgZ80ffNcHK_T26uJPijEpdRVWkzM", bio: "Ex-Managing Director of Godee" },
-    { name: "Pritesh Gupta", role: "CO-FOUNDER & CEO", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAvT7acsb0rafaTR1UqtJmsR8GKWuYXvK6ruBzLO_f_QKQ1ML-MxZ1s5gfzcaq-vZbSglbjZPY9lQhDbHAxhhBYl25WD17mwsmSljfU6hGPD0P0CJ6o9u_NK3tA-HBt_y6ZR5BbTkMs3cpWhRzYTdtkoRl6Y3m7mcnN9-qNS6dexsVJNBKVFw7pYRVK_S3VKmnLENkszUWOlDcjgnMJm5DjIuOEPFyaiRBTd0Q6WXAMxN_M8P4KzBOMvZSXXXC0Q_L5W28KrY6xwOsL3cw", bio: "Ex-VP of Ola Corp. Successful Exit for ZipGo." },
-    { name: "Hoang William", role: "LAWYER PARTNER", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCADBZoXBqyywJQwPcv6foae6qIsMdXMWexo1KERmuqJsKizo9TJ9ct_Bl77FEQ516DkCXmH-z_bdUgZJyY04fmz2mlxHrR5sONbgwKUjWsu-mluNYI_03Lz_Mtey_JAQNIZ4OJb35e8BFViBIOTtKbvXCKJ0SCooaRklzVx-Rx9r-JAICFVTmoQuN2Rptn1eL9Y_E0fteG5JSe7LK1sKolJmC4SX6Vivhve58fQVWYWVzML8S4S8P8UivaEyB_zaPdnFHSz7dAXTO6-nI", bio: "MBA - Lawyer. Managing Partner of CBI Law Firm." },
-    { name: "Max Tran", role: "TECHNICAL PARTNER", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDETHrqke3LAn-MILYzfe585JfEWJeyqiJhgjg4tZcBJ7OJYvsJRpeoYIrEZnsr6wWoZ8lQCnUzZqCWnZSALzx-Ctz31wFmF8KHS1Z9x5LrSg9iDVJ8Eo5pwtWNGdhgzQx_6KHKiQOzlEqDUjRID_mhvdCYOdmfAifb7A2LyJxxQmnuDfmvmh9wMLJyyTuQMFjH1CaMdUwPjmhwKuQwFytHgSgMWRFSBxABMgCcJTMQdH-lSI6AiFGMN2eXsyxOERmuMHkqJk50BpE3arU", bio: "Oracle Certified Data Scientist. 8+ years experience." },
-    { name: "Sam Dang", role: "MARKETING PARTNER", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDKM9uTw4ciQvFlkzQdlSd1VZc1w927SsoZOpmfACsZwrDnYuOFZJE-G2XV_4NT9pgSY8ADbodZL3zl9Psf265eEql8vduLgFDwLsRL3acLKc6IZ5LRSg4vPocQ1uYbM8qCB_pixYowcFGISImxPIXcCa-8kOqDl9lvEn-XjqIiVeUugflCMNGlPasUPDkmcDAlHC0fck-wiNnkFJCWN0oF6txMV1syxFXmKXOniJ5Clej2D0wenEa8adryZZa-WK0VI2DE_0GaRo-JDeA", bio: "Director of External Relations – Bee Comm/Sakos." },
-    { name: "Le Hoang Phuong", role: "PROGRAM DIRECTOR", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuA6TghveMQRuxpmNQR-4qQHHHcfpVpWzVH_qGhRCOeFLbvU_S566vAad5IEXEbd7e6guAO5T8hUnhWEceZw1v5wcR1DDZ40uY9z_0uXOtiyjyoWAvX_gU9PcsL4HkU0laakZz8HflcyhlISMO2joGSE40Ax0vnmu4CkrMjhFaHbcSo3yOqstYzcOvcA_3S9N64-MbnYn0YGUlKWttqatW-qRvot0FxwSdMYNnMZPY7AJetaOrIeCn0uxYhhdnbrB_eNnlXwAupMZ28g7tg", bio: "Head of Association Relations at InnoEx." },
+    { name: "Hoang Nhat (Leo)", role: "CO-FOUNDER", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCDQXMZYvzXwAY6X2QAfDuVssgzKrbXZts_LHQYqbx4uAmDaHkHWzZAXxo0po_WLzASY7LH8OhYuFvbGOEizoLKL1lYI8hLFJbaUlfEyc-YJtjfjJA_t2_pxAhidFYsu1KnILl_TBUW6hAMtFkf6UqQCch3XPVZb3E3xJIrgA0K47mO_fqasH_yF5GpiJLDgPx2aU8IE9C_x7TVsRxH8qa9VtsZ5M2rcVaolZxieAmXAVHhZuAYUVvad5nBOZDqMpcimW9Lg_Bmq1TsTBA", bio: "Ex-Managing Director of Godee" },
+    { name: "Pritesh Gupta", role: "CO-FOUNDER & CEO", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCaqExR4CVoPbWW3I9E_WLOqNuo7zXQluRRrOX_t8l1UcaBZ0sdMsYMCtes_xPRC9V1LSVcHGFJiKM_j3aS0ji9WjZ-DRyolykYV7fhvYwJqTu5PEBBlSulbnAv9FZF3tdVvj6Abb56UJNukkfBkmaKVD194qmbWsrdIX8nAwPO4nzA1Pvz7xhkZa-n690lHOIk-aY7HO6IJseb0zVz3B5QeMSW2dEhIqDMkgaVKKOm83voH_XvPMG70Bb_tDPz4OgMQRw2OOG1P8gXN8Q", bio: "Ex-VP of Ola Corp. Successful Exit for ZipGo." },
+    { name: "Hoang William", role: "LAWYER PARTNER", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBIOKU8EgoLv7P0RbVxHBZI3WJYLdMCyXpm1wTrnzPJ3V23P1IWeWN0Ti78mJAfNuz4I7La7T_5eXS0_ep4CM8IDlx0O2z_fB9ZFyFJF4NmukU5cYzARQoOstaD0FIR37nFNSiQL62j5gZqM3SDyfRX-V6ym70HBIZbqdhEEiSLcQssCFFkrk5ubSBV1zTSua-h3u9F9jxte62rrmfjyfPZj0dvcspVQGPbEqa2W-CcsY9kUF5lvouu5BesgwVcB1Gd4sK8Wra_721LcSA", bio: "MBA - Lawyer. Managing Partner of CBI Law Firm." },
+    { name: "Max Tran", role: "TECHNICAL PARTNER", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCNfOZu5afIiP-LU_JQI3cXaSSxQOB8BHqgMQLIhSIHD0wfZKX2swIQq6EWb9tsj4X8oQTs9NJiQwxm3is4Lc2AupwkaRJ3eL2757wzHEXFdJooRjZXIf33NvunusD_HfGn6b2gx1XpuXSDfowvbpJM6jF4POkrIbAGjnpDJQEZl76KLmykG4_J5zvMqd7YJWlUy1xJp0ua5S5qw3Q6jUTF4zK5Lf1XxUUSjNTknkuA2wSErhnRwyIgf9fCTPucyCujSjwMI-cyxFxqPYI", bio: "Oracle Certified Data Scientist. 8+ years experience." },
+    { name: "Sam Dang", role: "MARKETING PARTNER", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB7_R2dGC0m0XUYOKkb_KHmYjXqwH5WvnTfloJOdyuezUXoF7dK6Rqc4ciRtPQB20-dxbn7o5BFliYwmGNIb7GZtHPCzMDFAO8972AObfft9nCCkBiiX7TGTzYGE8rvYkTXE_dAt3eMYtUoc9oZ3cYnPZkFgffPQjMJICvcRmoZ6RHhegLEih3wctsCotu5Ou_mtt-PMHdWx1bMiF0EZjtMjLXLC8CY8NvB4_Pb9oyOKwsPMdk_LgBDJN5pwwtxYYw9Z3V7bSmeS5ZBswU", bio: "Director of External Relations – Bee Comm/Sakos." },
+    { name: "Le Hoang Phuong", role: "PROGRAM DIRECTOR", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAUciP8g7DP9rwBiLIsL2FMvbsuLnU40q6Y_yz3dKAGFKACQo1ia0lveYd6Fc-dptMIDh54bBElHwezcopqOfLpsiSKA_oqGuFcMHk-aKK1O4WzhIdkTz3soeZ4rYZ25pSAIrDtU-C7jVazaP-Qjc48JTegHqFCO0amaXkWbQJnre8nk_C_4LVCh0tfu9ZQ8iFtuoJT_NDI14L2oNi5t0yk8pWU4cnyzEmtwUSqZYZZQiNkLwX56LDgoTJESJ-c4s34EOVrAyWQrwExp3U", bio: "Head of Association Relations at InnoEx." },
   ];
 
   return (
@@ -26,7 +26,7 @@ const About = () => {
       <section className="bg-surface-container-low py-24">
         <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <div className="aspect-square bg-black rounded-xl flex items-center justify-center p-12">
+            <div className="aspect-square bg-[#04044A] rounded-xl flex items-center justify-center p-12">
               <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ8C8EJ5BtTwJnHXUk0RaKKicm7_m307fDjjYl8oN1JNBeoppZcNtkRCj3AKzP7d0lXyk_C54mKV42UTpAREG2IKE7s0-QrS8uLghIHHu-C-kabu8iHhCIdjVLZyTQBRyuoAi4nOWZkK7QbFaBkQs6p240w5Gwjd9fh4gLYtwftu-ZfHVWEriUErGB30lmfpgO5SBEGa-CO5V3dvUM-VZb-tcmKrJkjg3_L7qixT-CECbdCQ3-lBDfJcn9ZTHQztoUPA4oYw9seoPKTRc" alt="Logo" className="h-auto w-auto object-contain mb-6" />
             </div>
           </div>
@@ -80,7 +80,7 @@ const About = () => {
           ))}
         </div>
       </section>
-      <section className="py-[120px] bg-[#2c2e2e] text-on-primary">
+      <section className="py-[120px] bg-[#04044A] text-on-primary">
             <div className="max-w-[1280px] mx-auto px-6 text-center">
             <FadeIn>
                 <h2 

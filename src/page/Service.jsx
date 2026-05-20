@@ -1,75 +1,98 @@
 import { FadeIn } from "./Home";
 
-const serviceData =[
+const services =[
   {
-    num: "01",
+    icon: "dynamic_form",
     title: "Venture Building",
-    desc: "We partner with founders and corporations to design, build, and launch new digital businesses from zero to one. Our approach combines institutional-grade financial modeling with rapid prototyping.",
-    features: ["Market Validation & Feasibility", "Cap Table Architecture", "Interim Leadership Sourcing"],
-    bg: "bg-surface",
-    titleColor: "text-[#2c2e2e]",
-    textColor: "text-[#42474e]"
+    items:[
+      "Market Validation & Research",
+      "Go-to-Market (GTM) Planning",
+      "Operational Infrastructure"
+    ]
   },
   {
-    num: "02",
-    title: "Startup Strategy",
-    desc: "Refining the narrative for global investors. We specialize in fundraising strategy and operational roadmaps for Series A+ ventures entering the SEA market.",
-    features:["Fundraising Strategy", "Operational Roadmaps", "Market Entry Strategy"],
-    bg: "bg-[#1e466b]", // tertiary-container
-    titleColor: "text-white",
-    textColor: "text-[#8fb4df]" // on-tertiary-container
+    icon: "insights",
+    title: "Growth Strategy",
+    items:[
+      "User Acquisition & Retention",
+      "Regional Expansion Strategy",
+      "Data Analytics & Insights"
+    ]
   },
   {
-    num: "03",
-    title: "Branding & Growth",
-    desc: "Narrative-driven identity and performance marketing engines that resonate across diverse cultural landscapes.",
-    features: ["Identity & Narrative", "Performance Marketing", "GTM Execution"],
-    bg: "bg-surface",
-    titleColor: "text-[#2c2e2e]",
-    textColor: "text-[#42474e]"
+    icon: "account_balance",
+    title: "Capital Access",
+    items:[
+      "Seed & Series A Facilitation",
+      "VC Network Connections",
+      "Financial Modeling",
+      "Pitch Deck & Narrative Coaching"
+    ]
   },
   {
-    num: "04",
-    title: "Product & Technology",
-    desc: "Engineering high-performance digital products. Our tech stack is built for scale, focusing on mobile-first economies.",
-    features: ["High-Performance Engineering", "Scalable Architecture", "Mobile-First Solutions"],
-    bg: "bg-[#cae6ff]", // secondary-fixed
-    titleColor: "text-[#001e30]",
-    textColor: "text-[#004b70]"
+    icon: "groups",
+    title: "Talent Acquisition",
+    items:[
+      "Executive Search & Hiring",
+      "Leadership Mentorship",
+      "Culture & HR Infrastructure"
+    ]
+  },
+  {
+    icon: "hub",
+    title: "Strategic Networks",
+    items:[
+      "Local Ecosystem Integration",
+      "Strategic Partnership Sourcing",
+      "Industry Community Building"
+    ]
+  },
+  {
+    icon: "token",
+    title: "Technology",
+    items:[
+      "Technology consulting for business operations",
+      "System and workflow optimization"
+    ]
   }
+];
+
+const partners =[
+  { alt: "SeedStars", src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBPC-E1UoQwBo_3zhEEmlBVq1jVgPANQrhxgSXo5Qjc6rgnBXsehq8U_hOE2SmbtHzUEul7puNhn5R8vSKIzuKliRamZqbcxGQimMIxHUwRWEm4pjQW6Wp1W8X7D49Sdei41kfM-0aJF4ZK7U5zmU-srr1RYgqCg1TW4h2Sf2qjy-dkRQ5wFZLeBDVbqtnvO0dRVS-v1qTatxr5ThRKWnseMdHkY5vOCg1q9P5JCBOOD2zmh0RNCMC--qsAem9AwU-8REhcx6vUL9i-" },
+  { alt: "Razor Capital", src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDhoYY6ppCkQGlzw9xqs3B5iSVVo8-lIyxAyx7wleKT5NLqXr12sMqt0M2aWjuoHWccu0Gm_06DjPw24hEfSu6pO7TG5v6I1IEjnsFqKfjPHU1BD7_RXea8MInVMlrjtiyVrR6p74WQozKd5LcBfdpjZgMPRMVfR7jtJCR-cue9tCtwZ_-FWfTYXYZhr-e1slf_wnR_PhcodCIuizL3ef2PlV2-qNzyY1_oHac-mGbLGD7C2sV0xom7_P_VWIlhCzAa-oSzDDRaeJoF" },
+  { alt: "myAsiaVC", src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBSMts5dvAri-4XuZWUoQDZSdq6vmm-8tk_43t1JqmDX8c7iHtW560UXtbV-mx6KgHYZXlqu0Q_MLFdKcDYWgKZ8zXhcQwStwie1IrIId6_zooFqx6Av_k2O1jCJNEcLoaHIyugVt8j8_43xm6CkFt2gkcSfESyAd0r6kQGkl71_clEbI5A8rUNgLjJHSCxVxGJd8AVkBokcCWLEr3F057piCcq0uV_A_vwrHqStgNaX6A45nvxN5ebQJiT5gEPm7DwHfAzUxshyay3" }
 ];
 
 export default function Services() {
   return (
-    <main className="bg-background">
-      {/* Editorial Hero */}
+    <main className="bg-background text-on-background">
+      {/* Editorial Hero Section */}
       <section className="relative pt-[120px] pb-24 overflow-hidden bg-surface">
-        <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-16 items-end">
+        <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
           <div className="md:col-span-8">
             <FadeIn>
-              <span className="font-label-caps text-secondary mb-6 block uppercase tracking-[0.2em]">Our Capabilities</span>
-              <h1 className="font-display-lg text-4xl md:text-6xl mb-8 max-w-4xl">
-                <span className="italic text-secondary">Strategic Support</span> for High-Growth Startups
+              <span className="font-label-caps text-secondary mb-6 block uppercase tracking-widest">Our Capabilities</span>
+              <h1 className="font-display-lg text-4xl md:text-6xl mb-8 max-w-4xl font-medium text-on-surface">
+                <span className="italic text-[#006493]">Strategic Support </span>for High-Growth Startups
               </h1>
             </FadeIn>
           </div>
           <div className="md:col-span-4 pb-4">
             <FadeIn delay={200}>
-              <p className="font-body-lg text-on-surface-variant leading-relaxed border-l-2 border-secondary pl-6 mb-8">
+              <p className="font-body-lg text-on-surface-variant leading-relaxed border-l-2 border-secondary-fixed pl-6 mb-8">
                 From venture building and growth strategy to talent, technology, and capital support, we help startups scale sustainably.
               </p>
             </FadeIn>
           </div>
         </div>
-
-        {/* Hero Image */}
+        
         <div className="max-w-[1280px] mx-auto px-6 mt-16">
           <FadeIn delay={400}>
             <div className="aspect-[21/9] w-full overflow-hidden rounded-xl editorial-shadow">
               <img 
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7LDYbGm4ADlpoVD__GLHUML1JRC79A4ak-Tz8IA9nEUXOjCutV2Cw0oqqBnh2_5W36I1tZ6yfLbxZbSCaJ9PflB5RZHpLg_yKQwnsgoWMJ_UaQbxJqSdZoqs260BS5wKwPotVpQOrEbmLwQuv3W2w0hb1s2zIYkXaAzrfdkqpR5TRbj77fSYr0VpLr4Z3ypLmsvmEy6MH80gm4EUM7wP4rIBak4NSWe7eAWHBGxk-X8B2AGoryMaIpfzhIMp2o37hfitHsK7WojdCJ3k" 
-                alt="Office space" 
-                className="w-full h-full object-cover hover:grayscale-0 transition-all duration-700 grayscale"
+                alt="Strategic team meeting" 
+                className="w-full h-full object-cover transition-all duration-700 ease-in-out"
               />
             </div>
           </FadeIn>
@@ -77,42 +100,88 @@ export default function Services() {
       </section>
 
       {/* Services Grid */}
-      <section className="bg-surface-container-low py-24">
+      <section className="bg-surface-container-low py-[120px]">
         <div className="max-w-[1280px] mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {serviceData.map((s, i) => (
-              <FadeIn key={s.num} delay={i * 100}>
-                <div className={`${s.bg} p-12 rounded-xl editorial-shadow border border-white/10 flex flex-col h-full`}>
-                  <span className={`font-display-lg italic opacity-30 block mb-4 ${s.titleColor}`}>{s.num}</span>
-                  <h3 className={`text-2xl font-bold mb-6 ${s.titleColor}`}>{s.title}</h3>
-                  <p className={`font-body-md mb-8 leading-relaxed ${s.textColor}`}>{s.desc}</p>
-                  <ul className="space-y-4 mt-auto">
-                    {s.features.map((feat) => (
-                      <li key={feat} className="flex items-center gap-3">
-                        <span className="material-symbols-outlined text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
-                        <span className="font-label-caps text-xs uppercase">{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((s, i) => (
+              <ServiceCard key={i} icon={s.icon} title={s.title} items={s.items} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. VC Partners */}
+      <section className="py-24 bg-surface">
+        <div className="max-w-[1280px] mx-auto px-6">
+          <h2 className="font-display-lg text-4xl md:text-5xl text-center mb-16 font-medium text-on-surface">Our VC Partners</h2>
+          <div className="flex flex-wrap justify-center items-center gap-y-16 gap-x-48 opacity-70">
+            {partners.map((p, i) => (
+              <FadeIn key={i} delay={i * 100}>
+                <img src={p.src} alt={p.alt} className="h-32 md:h-40 object-contain hover:scale-105 transition-transform" />
               </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-24 bg-surface">
+      {/* 4. Final CTA */}
+      <section className="py-[120px] bg-surface">
         <div className="max-w-[1280px] mx-auto px-6 text-center">
           <FadeIn>
-            <h2 className="text-4xl md:text-5xl font-display-lg mb-12">Ready to define the next decade of growth?</h2>
+            <h2 className="font-display-lg text-4xl md:text-5xl mb-12 text-on-surface">
+              Ready to build the future of your business?
+            </h2>
             <div className="flex flex-col md:flex-row justify-center gap-6">
-              <button className="bg-primary text-white px-10 py-4 rounded-full font-label-caps hover:opacity-90 transition-all uppercase">Start a Venture</button>
-              <button className="border border-outline px-10 py-4 rounded-full font-label-caps hover:bg-surface-container-low transition-all uppercase">Request Portfolio</button>
+              <button className="bg-[#04044A] text-white px-10 py-4 rounded-full font-label-caps hover:opacity-90 transition-all uppercase ">
+                Start a Venture
+              </button>
+              <button className="border border-outline text-on-surface px-10 py-4 rounded-full font-label-caps hover:bg-surface-container-low transition-all uppercase">
+                Request Portfolio
+              </button>
             </div>
           </FadeIn>
         </div>
       </section>
     </main>
+  );
+}
+
+function ServiceCard({ icon, title, items }) {
+  return (
+    <div className="bg-white p-10 rounded-xl editorial-shadow border border-[#c2c7cf]/40 
+                    hover:bg-[#04044A] hover:text-white 
+                    hover:-translate-y-2 transition-all duration-300 
+                    cursor-default flex flex-col h-full group">
+      
+      {/* Icon: Using material symbols */}
+      <span className="material-symbols-outlined text-4xl mb-6 block text-[#71c3fe] group-hover:text-white transition-colors">
+        {icon}
+      </span>
+      
+      {/* Title */}
+      <h3 
+        className="text-[22px] font-medium mb-6 leading-snug text-[#04044A] group-hover:text-white transition-colors" 
+        style={{ fontFamily: "Newsreader, Georgia, serif" }}
+      >
+        {title}
+      </h3>
+      
+      {/* Feature List: Stretches the card using flex-grow */}
+      <ul className="space-y-3 flex-grow">
+        {items.map((item, index) => (
+          <li key={index} className="flex items-center gap-3 text-[14px] text-[#42474e] group-hover:text-[#c2c7cf] transition-colors">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#71c3fe] group-hover:bg-white transition-colors" />
+            {item}
+          </li>
+        ))}
+      </ul>
+
+      {/* Arrow Icon at bottom */}
+      <div className="mt-8">
+         <span className="material-symbols-outlined text-[#71c3fe] group-hover:text-white transition-colors" style={{ fontVariationSettings: "'FILL' 1" }}>
+           arrow_outward
+         </span>
+      </div>
+    </div>
   );
 }

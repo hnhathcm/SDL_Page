@@ -15,8 +15,8 @@ const Navbar = () => {
 
   return (
     <>
-        <nav className="sticky top-0 w-full z-50 backdrop-blur-xl border-b border-white/10 shadow-sm bg-[#111111]">
-        <div className="flex justify-between items-center max-w-[1280px] mx-auto px-6 py-4">
+        <nav className="sticky top-0 w-full z-50 backdrop-blur-xl border-b border-white/10 shadow-sm bg-[#04044A]">
+        <div className="flex justify-between items-center mx-auto px-6 py-4">
             
             {/* LEFT SIDE: Logo + Links */}
             <div className="flex items-center gap-12">
@@ -50,7 +50,7 @@ const Navbar = () => {
             </button>
 
             {/* Desktop CTA Button */}
-            <button className="hidden md:block px-6 py-2.5 rounded-l font-label-caps text-label-caps bg-[#A0D9FF] text-primary hover:opacity-80 transition-all">
+            <button className="hidden md:block px-6 py-2.5 rounded-xl font-label-caps text-label-caps bg-[#71c3fe] text-primary hover:opacity-80 transition-all">
                 Work With Us
             </button>
             </div>
@@ -75,7 +75,7 @@ const Navbar = () => {
                 {link.name}
               </NavLink>
             ))}
-            <button className="px-6 py-2.5 rounded-full font-label-caps text-label-caps bg-white text-primary hover:opacity-80 transition-all">
+            <button className="px-6 py-2.5 rounded-full font-label-caps text-label-caps bg-[#71c3fe] text-primary hover:opacity-80 transition-all">
               Work With Us
             </button>
           </div>

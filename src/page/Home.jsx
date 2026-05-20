@@ -244,8 +244,8 @@ export default function Home() {
       </section>
 
       {/* ── WHY US ──────────────────────────────────────────────────────── */}
-      <section className="py-28 bg-[#2c2e2e]">
-        <div className="max-w-[1280px] mx-auto px-6">
+      <section className="py-28 bg-[#04044A]">
+        <div className="mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             {/* text */}
             <div>
@@ -278,7 +278,7 @@ export default function Home() {
             <FadeIn delay={200} className="relative">
               <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#71c3fe]/10 blur-3xl rounded-full pointer-events-none" />
               <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTdhmoUlkrSlZt5tvdUZiGeaR4_Q5mLW7c5eQQG3dmNI_sHur2fpHQFjN2F4V2fG9zEYeDab4l-rroQzRQwgL0gMUbk5mTL6HgIt9q6ASVYK-M5PhRiqeQuPhDC-GT2Cjz32pfWokiGCpKlUFQXHgr2RJJ80nHZeliZPNr8szcyPel11Vb9vOMMZp46musz6YisLExxmfDixdtjfRsXn4VkPozUn78aIf0-UcQ6Je0UvLD4sONU_biT_Ujwt3_blvYFfT6GHFNlRkVtLE"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe2B69I91h0c1DSuqMAYdyxbdOcPMc7PH0ocZ8AgKy0ikyLCPZGnIFC2poGlkdAiJXCRoQaHSDXxdczVROAOzFPTxbEMZlYyyA7u4OWHG5TUA892OZmzMPlTEr7rAp2t1AnYgUYz15yya6MzqUr2FRrVG4wvlIfQW19jKeG3dxC7vxXyqAkXfVQpf0kkTYK0RPBV7xdP7__v1Si79ODno775m4_KoOUsQRkWfzWi4B6HwLbISf6k3bFjHGPocT2Af3F1QmaUrHVv2vzjM"
                 alt="Architectural blueprints"
                 className="rounded-2xl w-full object-cover"
                 style={{ aspectRatio: "4/5" }}
@@ -322,7 +322,7 @@ export default function Home() {
           <FadeIn>
             <div className="rounded-2xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
               {/* left panel */}
-              <div className="md:w-1/2 bg-[#424444] p-12 md:p-20 text-white flex flex-col justify-center">
+              <div className="md:w-1/2 bg-[#04044A] p-12 md:p-20 text-white flex flex-col justify-center">
                 <h2
                   className="text-[36px] md:text-[42px] mb-5 italic font-medium leading-[1.15]"
                   style={{ fontFamily: "Newsreader, Georgia, serif" }}
@@ -427,7 +427,7 @@ function ServiceCard({ icon, title, desc }) {
        hover:text-white: Changes all text inside the card to white on hover.
     */
     <div className="bg-white p-10 rounded-xl shadow-sm border border-[#c2c7cf]/40 
-                    hover:bg-[#2c2e2e] hover:text-white 
+                    hover:bg-[#04044A] hover:text-white 
                     hover:-translate-y-2 transition-all duration-300 
                     cursor-default flex flex-col h-full group">
       
