@@ -1,6 +1,9 @@
 import { FadeIn } from "./Home";
+import { useLanguage } from "../context/LanguageContext";
+import {useNavigate} from "react-router-dom";
 
-const services =[
+const services ={
+  "en": [
   {
     icon: "dynamic_form",
     title: "Venture Building",
@@ -55,7 +58,39 @@ const services =[
       "System and workflow optimization"
     ]
   }
-];
+],
+"vi":[
+  {
+    icon: "dynamic_form",
+    title: "Venture Building",
+    items:["Kiểm chứng thị trường & nghiên cứu", "Lập kế hoạch Go-to-Market (GTM)", "Xây dựng hạ tầng vận hành"]
+  },
+  {
+    icon: "insights",
+    title: "Growth Strategy",
+    items:["Thu hút & giữ chân người dùng", "Chiến lược mở rộng khu vực", "Phân tích dữ liệu & insight"]
+  },
+  {
+    icon: "account_balance",
+    title: "Capital Access",
+    items:["Hỗ trợ gọi vốn Seed & Series A", "Kết nối mạng lưới VC", "Financial Modeling", "Coaching Pitch Deck & Narrative"]
+  },
+  {
+    icon: "groups",
+    title: "Talent Acquisition",
+    items:["Tuyển dụng & tìm kiếm nhân sự cấp cao", "Mentorship lãnh đạo", "Xây dựng văn hóa & hệ thống HR"]
+  },
+  {
+    icon: "hub",
+    title: "Strategic Networks",
+    items:["Kết nối hệ sinh thái địa phương", "Tìm kiếm đối tác chiến lược", "Xây dựng cộng đồng ngành"]
+  },
+  {
+    icon: "token",
+    title: "Technology",
+    items:["Tư vấn công nghệ cho vận hành doanh nghiệp", "Tối ưu hệ thống và quy trình làm việc"]
+  }
+]};
 
 const partners =[
   { alt: "SeedStars", src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBPC-E1UoQwBo_3zhEEmlBVq1jVgPANQrhxgSXo5Qjc6rgnBXsehq8U_hOE2SmbtHzUEul7puNhn5R8vSKIzuKliRamZqbcxGQimMIxHUwRWEm4pjQW6Wp1W8X7D49Sdei41kfM-0aJF4ZK7U5zmU-srr1RYgqCg1TW4h2Sf2qjy-dkRQ5wFZLeBDVbqtnvO0dRVS-v1qTatxr5ThRKWnseMdHkY5vOCg1q9P5JCBOOD2zmh0RNCMC--qsAem9AwU-8REhcx6vUL9i-" },
@@ -64,6 +99,8 @@ const partners =[
 ];
 
 export default function Services() {
+  const {lang} = useLanguage();
+  const navigate = useNavigate();
   return (
     <main className="bg-background text-on-background">
       {/* Editorial Hero Section */}
@@ -71,16 +108,16 @@ export default function Services() {
         <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
           <div className="md:col-span-8">
             <FadeIn>
-              <span className="font-label-caps text-secondary mb-6 block uppercase tracking-widest">Our Capabilities</span>
+              <span className="font-label-caps text-secondary mb-6 block uppercase tracking-widest">{lang === "en" ? "OUR CAPABILITIES" : "NĂNG LỰC CỦA CHÚNG TÔI"}</span>
               <h1 className="font-display-lg text-4xl md:text-6xl mb-8 max-w-4xl font-medium text-on-surface">
-                <span className="italic text-[#006493]">Strategic Support </span>for High-Growth Startups
+                <span className="italic text-[#006493]">{lang === "en" ? "Strategic Support" : "Hỗ Trợ Chiến Lược"} </span>{lang === "en" ? "for High-Growth Startups" : "cho Các Startup Tăng Trưởng Cao"}
               </h1>
             </FadeIn>
           </div>
           <div className="md:col-span-4 pb-4">
             <FadeIn delay={200}>
               <p className="font-body-lg text-on-surface-variant leading-relaxed border-l-2 border-secondary-fixed pl-6 mb-8">
-                From venture building and growth strategy to talent, technology, and capital support, we help startups scale sustainably.
+                {lang === "en" ? "From venture building and growth strategy to talent, technology, and capital support, we help startups scale sustainably." : "Từ venture building và chiến lược tăng trưởng đến nhân sự, công nghệ và hỗ trợ gọi vốn, chúng tôi giúp startup phát triển bền vững."}
               </p>
             </FadeIn>
           </div>
@@ -103,7 +140,7 @@ export default function Services() {
       <section className="bg-surface-container-low py-[120px]">
         <div className="max-w-[1280px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((s, i) => (
+            {services[lang].map((s, i) => (
               <ServiceCard key={i} icon={s.icon} title={s.title} items={s.items} />
             ))}
           </div>
@@ -113,7 +150,7 @@ export default function Services() {
       {/* 3. VC Partners */}
       <section className="py-24 bg-surface">
         <div className="max-w-[1280px] mx-auto px-6">
-          <h2 className="font-display-lg text-4xl md:text-5xl text-center mb-16 font-medium text-on-surface">Our VC Partners</h2>
+          <h2 className="font-display-lg text-4xl md:text-5xl text-center mb-16 font-medium text-on-surface">{lang === "en" ? "Our VC Partners" : "Đối Tác VC Của Chúng Tôi"}</h2>
           <div className="flex flex-wrap justify-center items-center gap-y-16 gap-x-48 opacity-70">
             {partners.map((p, i) => (
               <FadeIn key={i} delay={i * 100}>
@@ -129,14 +166,14 @@ export default function Services() {
         <div className="max-w-[1280px] mx-auto px-6 text-center">
           <FadeIn>
             <h2 className="font-display-lg text-4xl md:text-5xl mb-12 text-on-surface">
-              Ready to build the future of your business?
+              {lang === "en" ? "Ready to build the future of your business?" : "Sẵn sàng xây dựng tương lai cho doanh nghiệp của bạn?"}
             </h2>
             <div className="flex flex-col md:flex-row justify-center gap-6">
-              <button className="bg-[#04044A] text-white px-10 py-4 rounded-full font-label-caps hover:opacity-90 transition-all uppercase ">
-                Start a Venture
+              <button className="bg-[#04044A] text-white px-10 py-4 rounded-full font-label-caps hover:opacity-90 transition-all uppercase" onClick={() => navigate("/contact")}>
+                {lang === "en" ? "START A VENTURE" : "BẮT ĐẦU MỘT VENTURE"}
               </button>
-              <button className="border border-outline text-on-surface px-10 py-4 rounded-full font-label-caps hover:bg-surface-container-low transition-all uppercase">
-                Request Portfolio
+              <button className="border border-outline text-on-surface px-10 py-4 rounded-full font-label-caps hover:bg-surface-container-low transition-all uppercase" onClick={() => navigate("/portfolio")}>
+                {lang === "en" ? "REQUEST PORTFOLIO" : "XEM PORTFOLIO"}
               </button>
             </div>
           </FadeIn>

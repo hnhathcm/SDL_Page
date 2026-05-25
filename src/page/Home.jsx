@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "../context/LanguageContext"; // Adjust path to your context
 import ReactPlayer from 'react-player';
+import video from "../assets/Introduction_SDL.mp4"
 
 // ── Reusable fade-in-on-scroll hook ──────────────────────────────────────────
 function useFadeIn(threshold = 0.15) {
@@ -293,7 +294,7 @@ export default function Home() {
                 controls
                 poster="https://lh3.googleusercontent.com/aida-public/AB6AXuAAzh7jAiJRutg8IyCgWnzR92x5drT25WdUKZVj309P6Mgclw8kbnqBd6FdP3lafDTbd1Wlba3ai33uRPfph2Lkm-eRBWs7KMU8K5SY6sEo9cAv4fNt_yU75639SPPKOA8bb-5I3bV-beZHmMpDCtpjy3RN2YETk_-UL0VkOm4ow35_kZS06wffsYiQkr-UKmtTUpxwZ6zXo3riJpDQalUNELZesqw9PF0zgO-iA5jL9zDN1PKvxJP7d9mCx1NlfubaPdcBga4rgatW" // Image shown before play
               >
-                <source src="../assets/Introduction_SDL.mp4" type="video/mp4" />
+                <source src={video} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
 
@@ -432,23 +433,23 @@ export default function Home() {
                 {submitted ? (
                   <div className="h-full flex flex-col items-center justify-center text-center gap-4">
                     <span className="material-symbols-outlined text-[48px] text-[#71c3fe]">check_circle</span>
-                    <h3 className="text-[20px] font-semibold text-[#2c2e2e]">Inquiry sent!</h3>
-                    <p className="text-[14px] text-[#42474e]">We'll be in touch soon.</p>
+                    <h3 className="text-[20px] font-semibold text-[#2c2e2e]">{lang === "en" ? "Inquiry sent!" : "Đã gửi yêu cầu!"}</h3>
+                    <p className="text-[14px] text-[#42474e]">{lang === "en" ? "We'll be in touch soon." : "Chúng tôi sẽ sớm liên lạc với bạn."}</p>
                   </div>
                 ) : (
                   <form className="space-y-6" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <FormField
-                        label="FULL NAME"
+                        label={lang === "en" ? "FULL NAME" : "HỌ VÀ TÊN"}
                         type="text"
-                        placeholder="John Doe"
+                        placeholder={lang === "en" ? "John Doe" : "Nguyễn Văn A"}
                         value={formData.name}
                         onChange={(v) => setFormData((p) => ({ ...p, name: v }))}
                       />
                       <FormField
-                        label="EMAIL ADDRESS"
+                        label={lang === "en" ? "EMAIL ADDRESS" : "ĐỊA CHỈ EMAIL"}
                         type="email"
-                        placeholder="john@example.com"
+                        placeholder={lang === "en" ? "john@example.com" : "john@example.com"}
                         value={formData.email}
                         onChange={(v) => setFormData((p) => ({ ...p, email: v }))}
                       />
@@ -456,7 +457,7 @@ export default function Home() {
 
                     <div className="space-y-1">
                       <label className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#42474e]" style={{ fontFamily: "Manrope, sans-serif" }}>
-                        INTEREST AREA
+                        {lang === "en" ? "INTEREST AREA" : "NỘI DUNG QUAN TÂM"}
                       </label>
                       <select
                         value={formData.interest}
@@ -471,11 +472,11 @@ export default function Home() {
 
                     <div className="space-y-1">
                       <label className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#42474e]" style={{ fontFamily: "Manrope, sans-serif" }}>
-                        HOW CAN WE HELP?
+                        {lang === "en" ? "HOW CAN WE HELP?" : "CHÚNG TÔI CÓ THỂ HỖ TRỢ BẠN NHƯ THẾ NÀO?"}
                       </label>
                       <textarea
                         rows={4}
-                        placeholder="Tell us about your vision..."
+                        placeholder={lang === "en" ? "Tell us about your vision..." : "Hãy cho chúng tôi biết về tầm nhìn của bạn..."}
                         value={formData.message}
                         onChange={(e) => setFormData((p) => ({ ...p, message: e.target.value }))}
                         className="w-full border-0 border-b border-[#c2c7cf] focus:ring-0 focus:border-[#2c2e2e] transition-colors py-2 px-0 text-[14px] resize-none bg-transparent outline-none"
@@ -486,7 +487,7 @@ export default function Home() {
                       type="submit"
                       className="w-full bg-[#2c2e2e] text-white py-4 font-bold text-[14px] hover:bg-[#424444] transition-colors rounded shadow-lg tracking-wide"
                     >
-                      Submit Inquiry
+                      {lang === "en" ? "Submit Inquiry" : "Gửi Yêu Cầu"}
                     </button>
                   </form>
                 )}

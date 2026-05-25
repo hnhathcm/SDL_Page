@@ -1,4 +1,6 @@
+import { useLanguage } from "../context/LanguageContext";
 const Footer = () => {
+  const {lang} = useLanguage();
   return (
     <footer className="bg-[#04044A] w-full py-20 border-t border-white/10 text-white">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mx-auto px-6">
@@ -11,7 +13,9 @@ const Footer = () => {
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ8C8EJ5BtTwJnHXUk0RaKKicm7_m307fDjjYl8oN1JNBeoppZcNtkRCj3AKzP7d0lXyk_C54mKV42UTpAREG2IKE7s0-QrS8uLghIHHu-C-kabu8iHhCIdjVLZyTQBRyuoAi4nOWZkK7QbFaBkQs6p240w5Gwjd9fh4gLYtwftu-ZfHVWEriUErGB30lmfpgO5SBEGa-CO5V3dvUM-VZb-tcmKrJkjg3_L7qixT-CECbdCQ3-lBDfJcn9ZTHQztoUPA4oYw9seoPKTRc"
           />
           <p className="font-body-md text-body-md text-white/70 max-w-sm">
-            Bridging high-finance strategy and Southeast Asian growth. We are more than investors; we are operational partners.
+            {lang === "en" 
+              ? "Bridging high-finance strategy and Southeast Asian growth. We are more than investors; we are operational partners." 
+              : "Kết nối chiến lược tài chính cao và sự tăng trưởng tại Đông Nam Á. Chúng tôi không chỉ là nhà đầu tư; chúng tôi là đối tác vận hành."}
           </p>
         </div>
 
@@ -22,7 +26,7 @@ const Footer = () => {
             {['About', 'Portfolio', 'Services'].map(item => (
               <li key={item}>
                 <a href={`/${item.toLowerCase()}`} className="font-body-md text-body-md text-white/70 hover:text-white transition-all hover:translate-x-1 inline-block">
-                  {item}
+                  {lang === "en" ? item : item === "About" ? "Giới thiệu" : item === "Portfolio" ? "Portfolio" : "Dịch vụ"}
                 </a>
               </li>
             ))}
@@ -36,7 +40,7 @@ const Footer = () => {
             {['Privacy Policy', 'Careers', 'Contact'].map(social => (
               <li key={social}>
                 <a href="#" className="font-body-md text-body-md text-white/70 hover:text-white transition-all hover:translate-x-1 inline-block">
-                  {social}
+                  {lang === "en" ? social : social === "Privacy Policy" ? "Chính sách Bảo mật" : social === "Careers" ? "Cơ hội Nghề nghiệp" : "Liên hệ"}
                 </a>
               </li>
             ))}
@@ -49,7 +53,7 @@ const Footer = () => {
             <div className="flex border-b border-white/30 pb-2">
                 <input 
                 className="bg-transparent border-none focus:ring-0 w-full p-0 font-body-md text-body-md text-white placeholder-white/40" 
-                placeholder="Email address" 
+                placeholder={lang === "en" ? "Email address" : "Địa chỉ email"} 
                 type="email" 
                 />
                 {/* Button with Left Arrow Icon */}
