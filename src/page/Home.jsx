@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import { useLanguage } from "../context/LanguageContext"; // Adjust path to your context
+import ReactPlayer from 'react-player';
 
 // ── Reusable fade-in-on-scroll hook ──────────────────────────────────────────
 function useFadeIn(threshold = 0.15) {
@@ -35,8 +37,9 @@ export function FadeIn({ children, delay = 0, className = "" }) {
 }
 
 // ── Service cards data ────────────────────────────────────────────────────────
-const services = [
-  {
+const services = {
+  "en": [
+      {
     icon: "dynamic_form",
     title: "Venture Building",
     desc: "Full-stack operational support from day zero, including product design and market validation.",
@@ -72,42 +75,116 @@ const services = [
     desc: "Unique business requires unique technology solution to multiply your business.",
     variant: "light",
   },
-];
+  ],
+  "vi": [
+      {
+    icon: "dynamic_form",
+    title: "Xây Dựng Doanh Nghiệp",
+    desc: "Hỗ trợ vận hành toàn diện từ ngày đầu tiên, bao gồm thiết kế sản phẩm, kiểm chứng thị trường và xây dựng nền tảng phát triển.",
+    variant: "light",
+  },
+  {
+    icon: "insights",
+    title: "Chiến Lược Phát Triển",
+    desc: "Ứng dụng các phương pháp tiếp cận dựa trên dữ liệu để mở rộng tệp khách hàng và tăng trưởng xuyên biên giới tại Đông Nam Á.",
+    variant: "light",
+  },
+  {
+    icon: "account_balance",
+    title: "Tiếp Cận Nguồn Vốn",
+    desc: "Kết nối nhà sáng lập với mạng lưới nhà đầu tư và quỹ đầu tư mạo hiểm toàn cầu.",
+    variant: "light",
+  },
+  {
+    icon: "groups",
+    title: "Thu Hút Nhân Tài",
+    desc: "Bổ sung và kết nối đội ngũ công nghệ, quản lý và lãnh đạo cốt lõi cho các startup giai đoạn đầu.",
+    variant: "light",
+  },
+  {
+    icon: "hub",
+    title: "Mạng Lưới Chiến Lược",
+    desc: "Mở ra cơ hội tiếp cận trực tiếp hệ sinh thái khởi nghiệp Việt Nam cùng mạng lưới nhà đầu tư trong và ngoài nước.",
+    variant: "light",
+  },
+  {
+    icon: "token",
+    title: "Công Nghệ",
+    desc: "Mỗi mô hình kinh doanh đều cần một giải pháp công nghệ riêng biệt để tối ưu hiệu quả và thúc đẩy tăng trưởng đột phá.",
+    variant: "light",
+  },
+  ]
+};
 
 // ── Why us pillars ────────────────────────────────────────────────────────────
-const pillars = [
-  {
-    num: "01",
-    title: "Localized Intelligence",
-    desc: "We navigate the nuances of the Vietnamese market with native precision and global standards.",
-  },
-  {
-    num: "02",
-    title: "Hands-on Partnership",
-    desc: "We are builders, not just advisors. We get into the trenches with you to solve complex technical hurdles.",
-  },
-  {
-    num: "03",
-    title: "Founder Experience",
-    desc: "Having built and successfully exited our own startup, we know firsthand the struggles founders face and what it takes to succeed at each stage.",
-  },
-];
+const pillars = {
+    "en": [
+    {
+      num: "01",
+      title: "Localized Intelligence",
+      desc: "We navigate the nuances of the Vietnamese market with native precision and global standards.",
+    },
+    {
+      num: "02",
+      title: "Hands-on Partnership",
+      desc: "We are builders, not just advisors. We get into the trenches with you to solve complex technical hurdles.",
+    },
+    {
+      num: "03",
+      title: "Founder Experience",
+      desc: "Having built and successfully exited our own startup, we know firsthand the struggles founders face and what it takes to succeed at each stage.",
+    },
+  ],
+    "vi": [
+    {
+      num: "01",
+      title: "Am Hiểu Thị Trường Bản Địa",
+      desc: "Chúng tôi thấu hiểu sâu sắc thị trường Việt Nam với góc nhìn địa phương và tiêu chuẩn vận hành quốc tế.",
+    },
+    {
+      num: "02",
+      title: "Đồng Hành Thực Chiến",
+      desc: "Chúng tôi là những người trực tiếp xây dựng doanh nghiệp, không chỉ là cố vấn. SonDoong Labs làm việc sát cánh cùng nhà sáng lập để giải quyết các bài toán vận hành và tăng trưởng.",
+    },
+    {
+      num: "03",
+      title: "Kinh Nghiệm Từ Nhà Sáng Lập",
+      desc: "Đã từng xây dựng và thoái vốn thành công từ chính startup của mình, chúng tôi hiểu rõ những khó khăn mà nhà sáng lập phải đối mặt và biết điều gì cần thiết để thành công ở từng giai đoạn phát triển.",
+    },
+  ]
+};
 
 // ── Portfolio data ────────────────────────────────────────────────────────────
-const portfolio = [
-  {
-    name: "Finfan",
-    sub: "International payment company (Licensed)",
-    tag: "FINTECH",
-    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuC1-kSSRWj7kki_hWbpdZj9tsFgCVA4cyGM5r4wiiRtDve7Jds2Q_WutYIwfu5OoXdOf5IKBhQenoaJFR_PiNFVHN1-2a6FMNWIpUuQyHfEjGtZ9YoK9W1dWGnDEeN1vlAhnNK8mfNnn9k9hYVCF2LNOP_SjtFYPTC991P-SaAoi_wnplEcI6FYRAsJripP9QrJRuy4Pg4u85OPMMlNe4IlLIxxEJSn5J1_hx7KtwGn-a5Zd19QhGw-AS7m5IHBDj7mC-k8BrLNPEwnN4o",
-  },
-  {
-    name: "Levents Global",
-    sub: "Fashion Brand for GenZ with 10M+/year",
-    tag: "CONSUMER",
-    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBEmB9YscXNPopAL8TIah-DRBQ-cEooGTXHoROAahwwN6iP-6oyc7Q1W4I9ub5UnAQ8UaIga6LcNpdZsHQp8qAf_8jr4e33Chw4h-5XTMLg3b6NdpzalXCFxNf6JC9f0dQnBFl0TVX10NS7MrW6paIp2IsQIlflm1Mc3bAtICtwTzFBg8yClNI_V8ciyKX2bKVZ5Ew6SgUSk8OlJpDkBQz8j9tXk1D0nYjaD0o9GVCGWbjfpGHv_kUANOP1NDDp8f2v5z1UaViMX02Yzm0",
-  },
-];
+const portfolio = {
+    "en": [
+    {
+      name: "Finfan",
+      sub: "International payment company (Licensed)",
+      tag: "FINTECH",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuC1-kSSRWj7kki_hWbpdZj9tsFgCVA4cyGM5r4wiiRtDve7Jds2Q_WutYIwfu5OoXdOf5IKBhQenoaJFR_PiNFVHN1-2a6FMNWIpUuQyHfEjGtZ9YoK9W1dWGnDEeN1vlAhnNK8mfNnn9k9hYVCF2LNOP_SjtFYPTC991P-SaAoi_wnplEcI6FYRAsJripP9QrJRuy4Pg4u85OPMMlNe4IlLIxxEJSn5J1_hx7KtwGn-a5Zd19QhGw-AS7m5IHBDj7mC-k8BrLNPEwnN4o",
+    },
+    {
+      name: "Levents Global",
+      sub: "Fashion Brand for GenZ with 10M+/year",
+      tag: "CONSUMER",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBEmB9YscXNPopAL8TIah-DRBQ-cEooGTXHoROAahwwN6iP-6oyc7Q1W4I9ub5UnAQ8UaIga6LcNpdZsHQp8qAf_8jr4e33Chw4h-5XTMLg3b6NdpzalXCFxNf6JC9f0dQnBFl0TVX10NS7MrW6paIp2IsQIlflm1Mc3bAtICtwTzFBg8yClNI_V8ciyKX2bKVZ5Ew6SgUSk8OlJpDkBQz8j9tXk1D0nYjaD0o9GVCGWbjfpGHv_kUANOP1NDDp8f2v5z1UaViMX02Yzm0",
+    },
+  ],
+    "vi": [
+    {
+      name: "Finfan",
+      sub: "Doanh nghiệp thanh toán quốc tế được cấp phép hoạt động",
+      tag: "FINTECH",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuC1-kSSRWj7kki_hWbpdZj9tsFgCVA4cyGM5r4wiiRtDve7Jds2Q_WutYIwfu5OoXdOf5IKBhQenoaJFR_PiNFVHN1-2a6FMNWIpUuQyHfEjGtZ9YoK9W1dWGnDEeN1vlAhnNK8mfNnn9k9hYVCF2LNOP_SjtFYPTC991P-SaAoi_wnplEcI6FYRAsJripP9QrJRuy4Pg4u85OPMMlNe4IlLIxxEJSn5J1_hx7KtwGn-a5Zd19QhGw-AS7m5IHBDj7mC-k8BrLNPEwnN4o",
+    },
+    {
+      name: "Levents Global",
+      sub: "Thương hiệu thời trang cho GenZ với doanh thu 10M+/năm",
+      tag: "CONSUMER",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBEmB9YscXNPopAL8TIah-DRBQ-cEooGTXHoROAahwwN6iP-6oyc7Q1W4I9ub5UnAQ8UaIga6LcNpdZsHQp8qAf_8jr4e33Chw4h-5XTMLg3b6NdpzalXCFxNf6JC9f0dQnBFl0TVX10NS7MrW6paIp2IsQIlflm1Mc3bAtICtwTzFBg8yClNI_V8ciyKX2bKVZ5Ew6SgUSk8OlJpDkBQz8j9tXk1D0nYjaD0o9GVCGWbjfpGHv_kUANOP1NDDp8f2v5z1UaViMX02Yzm0",
+    },
+  ]
+};
 
 // ── Contact info ──────────────────────────────────────────────────────────────
 const contacts = [
@@ -120,6 +197,7 @@ export default function Home() {
   const [formData, setFormData] = useState({
     name: "", email: "", interest: "Venture Building", message: "",
   });
+  const { lang } = useLanguage()
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
@@ -149,27 +227,28 @@ export default function Home() {
               className="inline-block text-[11px] font-semibold tracking-[0.15em] uppercase text-[#71c3fe] mb-6 bg-[#006493]/30 px-3 py-1 rounded"
               style={{ fontFamily: "Manrope, sans-serif" }}
             >
-              Venture Builder
+              {lang === "en" ? "VENTURE BUILDER" : "ƯƠM MẦM KHỞI NGHIỆP"}
             </span>
 
             <h1
               className="text-[42px] md:text-[64px] text-white mb-8 leading-[1.1] font-medium tracking-[-0.02em]"
               style={{ fontFamily: "Newsreader, Georgia, serif" }}
             >
-              A Startup Program for Founders by Founders
+              {lang === "en" ? "A Startup Program for Founders by Founders" : "Chương Trình Khởi Nghiệp Dành Cho Nhà Sáng Lập, Được Xây Dựng Bởi Chính Những Nhà Sáng Lập"}
             </h1>
 
             <p className="text-[16px] text-[#d8d8d8] max-w-2xl mb-10 leading-relaxed">
-              SonDoong Labs is an independent privately owned venture builder cum investment management company
-              that aims to support early-stage and growth startups.
+              {lang === "en"
+                ? '"SonDoong Labs is an independent privately owned venture builder cum investment management company that aims to support early-stage and growth startups."'
+                : '"SonDoong Labs là một công ty xây dựng doanh nghiệp (venture builder) kết hợp quản lý đầu tư độc lập, thuộc sở hữu tư nhân, với sứ mệnh hỗ trợ các startup giai đoạn đầu và đang tăng trưởng phát triển bền vững. Labs là một công ty xây dựng doanh nghiệp độc lập và sở hữu tư nhân, kết hợp với quản lý đầu tư, nhằm hỗ trợ các startup giai đoạn đầu và có tiềm năng tăng trưởng."'}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="bg-[#71c3fe] text-[#001e30] px-8 py-4 rounded-lg font-bold text-[15px] hover:opacity-90 transition-opacity">
-                Start a Venture
+                {lang === "en" ? "Start a Venture" : "Khởi Tạo Dự Án"}
               </button>
               <button className="border border-white/30 text-white px-8 py-4 rounded-lg font-bold text-[15px] hover:bg-white/10 transition-colors backdrop-blur-sm">
-                View Portfolio
+                {lang === "en" ? "View Portfolio" : "Xem Danh Mục Đầu Tư"}
               </button>
             </div>
           </div>
@@ -178,7 +257,7 @@ export default function Home() {
         {/* scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/40 animate-bounce">
           <span className="text-[10px] tracking-[0.15em] font-semibold" style={{ fontFamily: "Manrope, sans-serif" }}>
-            SCROLL
+            {lang === "en" ? "SCROLL" : "KÉO XUỐNG"}
           </span>
           <span className="material-symbols-outlined text-[20px]">expand_more</span>
         </div>
@@ -190,17 +269,18 @@ export default function Home() {
           <div className="max-w-3xl text-center">
             <FadeIn>
               <span className="text-[11px] font-semibold tracking-[0.15em] uppercase text-[#2c2e2e] mb-4 block" style={{ fontFamily: "Manrope, sans-serif" }}>
-                ABOUT SONDOONG LABS
+                {lang === "en" ? "ABOUT SONDOONG LABS" : "VỀ SONDOONG LABS"}
               </span>
-              <h2 className="text-[24px] text-[#2c2e2e] mb-6 italic font-semibold leading-[1.4]" style={{ fontFamily: "Newsreader, Georgia, serif" }}>
-                Beyond capital, we help build the foundation behind enduring companies.
+              <h2 className="text-[24px] text-[#2c2e2e] mb-6 italic font-semibold leading-[1.4]" style={{ fontFamily: "Newsreader, serif" }}>
+                {lang === "en"
+                  ? "Beyond capital, we help build the foundation behind enduring companies."
+                  : "Không chỉ là nguồn vốn, chúng tôi xây dựng nền tảng cho những doanh nghiệp trường tồn."}
               </h2>
               <div className="w-12 h-[3px] bg-[#71c3fe] mb-8 mx-auto rounded-full" />
               <p className="text-[14px] text-[#42474e] leading-relaxed">
-                Sondoong Labs through its venture builder arm enters a startup in different situations with different
-                contexts: at a time when the company has just been incorporated, when the business is fledgling and
-                lacks the growth momentum, or when the venture has immense potential but lacks investors &amp; people
-                interest to join as partners / key hires, or even when the venture is stuck in myriad growth problems.
+                {lang === "en"
+                  ? "Sondoong Labs through its venture builder arm enters a startup in different situations with different contexts: at a time when the company has just been incorporated, when the business is fledgling and lacks the growth momentum, or when the venture has immense potential but lacks investors & people interest to join as partners / key hires, or even when the venture is stuck in myriad growth problems."
+                  : "Thông qua mô hình venture builder, SonDoong Labs đồng hành cùng startup trong nhiều bối cảnh khác nhau: khi doanh nghiệp vừa được thành lập, khi hoạt động kinh doanh còn non trẻ và thiếu động lực tăng trưởng, khi dự án sở hữu tiềm năng lớn nhưng chưa thu hút được nhà đầu tư hoặc nhân sự chủ chốt, hoặc khi doanh nghiệp đang mắc kẹt trong những thách thức tăng trưởng phức tạp."}
               </p>
             </FadeIn>
           </div>
@@ -208,16 +288,15 @@ export default function Home() {
           {/* video thumbnail */}
           <FadeIn delay={100} className="w-full max-w-5xl">
             <div className="aspect-video bg-[#424444] rounded-xl overflow-hidden relative group shadow-2xl">
-              <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAzh7jAiJRutg8IyCgWnzR92x5drT25WdUKZVj309P6Mgclw8kbnqBd6FdP3lafDTbd1Wlba3ai33uRPfph2Lkm-eRBWs7KMU8K5SY6sEo9cAv4fNt_yU75639SPPKOA8bb-5I3bV-beZHmMpDCtpjy3RN2YETk_-UL0VkOm4ow35_kZS06wffsYiQkr-UKmtTUpxwZ6zXo3riJpDQalUNELZesqw9PF0zgO-iA5jL9zDN1PKvxJP7d9mCx1NlfubaPdcBga4rgatW"
-                alt="Team collaboration"
-                className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <button className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
-                  <span className="material-symbols-outlined text-[#2c2e2e] text-4xl ml-1">play_arrow</span>
-                </button>
-              </div>
+              <video
+                className="w-full h-full object-cover"
+                controls
+                poster="https://lh3.googleusercontent.com/aida-public/AB6AXuAAzh7jAiJRutg8IyCgWnzR92x5drT25WdUKZVj309P6Mgclw8kbnqBd6FdP3lafDTbd1Wlba3ai33uRPfph2Lkm-eRBWs7KMU8K5SY6sEo9cAv4fNt_yU75639SPPKOA8bb-5I3bV-beZHmMpDCtpjy3RN2YETk_-UL0VkOm4ow35_kZS06wffsYiQkr-UKmtTUpxwZ6zXo3riJpDQalUNELZesqw9PF0zgO-iA5jL9zDN1PKvxJP7d9mCx1NlfubaPdcBga4rgatW" // Image shown before play
+              >
+                <source src="../assets/Introduction_SDL.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+
             </div>
           </FadeIn>
         </div>
@@ -227,14 +306,16 @@ export default function Home() {
       <section className="py-28 bg-[#f6f3f2]">
         <div className="max-w-[1280px] mx-auto px-6">
           <FadeIn className="mb-16 text-center">
-            <h2 className="text-[24px] font-bold text-[#2c2e2e] mb-3">What We Do</h2>
+            <h2 className="text-[24px] font-bold text-[#2c2e2e] mb-3">{lang === "en" ? "What We Do" : "Chúng Tôi Làm Gì"}</h2>
             <p className="text-[14px] text-[#42474e] max-w-xl mx-auto">
-              A comprehensive ecosystem designed to de-risk startup growth from ideation to exit.
+              {lang === "en"
+                ? '"A comprehensive ecosystem designed to de-risk startup growth from ideation to exit."'
+                : '"Một hệ sinh thái toàn diện giúp giảm thiểu rủi ro tăng trưởng cho startup từ giai đoạn hình thành ý tưởng đến khi mở rộng hoặc thoái vốn."'}
             </p>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {services.map((s, i) => (
+            {services[lang].map((s, i) => (
               <FadeIn key={s.title} delay={i * 60}>
                 <ServiceCard {...s} />
               </FadeIn>
@@ -245,20 +326,20 @@ export default function Home() {
 
       {/* ── WHY US ──────────────────────────────────────────────────────── */}
       <section className="py-28 bg-[#04044A]">
-        <div className="mx-auto px-6">
+        <div className="max-w-[1280px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             {/* text */}
             <div>
               <FadeIn>
                 <h2
                   className="text-[36px] md:text-[42px] text-white mb-10 italic font-medium leading-[1.15]"
-                  style={{ fontFamily: "Newsreader, Georgia, serif" }}
+                  style={{ fontFamily: "Newsreader, serif" }}
                 >
-                  Why SonDoong Labs?
+                  {lang === "en" ? "Why SonDoong Labs?" : "Vì Sao Là SonDoong Labs?"}
                 </h2>
               </FadeIn>
               <div className="space-y-10">
-                {pillars.map((p, i) => (
+                {pillars[lang].map((p, i) => (
                   <FadeIn key={p.num} delay={i * 100}>
                     <div className="flex gap-6">
                       <div className="text-[#71c3fe] text-[22px] font-semibold tabular-nums shrink-0 leading-tight mt-0.5">
@@ -294,20 +375,22 @@ export default function Home() {
           <FadeIn className="flex justify-between items-end mb-14">
             <div>
               <span className="text-[11px] font-semibold tracking-[0.15em] uppercase text-[#006493] mb-3 block" style={{ fontFamily: "Manrope, sans-serif" }}>
-                PORTFOLIO HIGHLIGHTS
+                {lang === "en" ? "PORTFOLIO HIGHLIGHTS" : "DỰ ÁN TIÊU BIỂU"}
               </span>
-              <h2 className="text-[24px] font-bold text-[#2c2e2e]">Featured Ventures</h2>
+              <h2 className="text-[24px] font-bold text-[#2c2e2e]">
+                {lang === "en" ? "Featured Ventures" : "Các Doanh Nghiệp Nổi Bật"}
+              </h2>
             </div>
             <a
-              href="#"
+              href="/portfolio"
               className="text-[14px] font-semibold text-[#2c2e2e] border-b border-[#2c2e2e] hover:text-[#006493] hover:border-[#006493] transition-colors"
             >
-              View full directory
+              {lang === "en" ? "View full directory" : "Xem toàn bộ danh mục"}
             </a>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {portfolio.map((p, i) => (
+            {portfolio[lang].map((p, i) => (
               <FadeIn key={p.name} delay={i * 100}>
                 <PortfolioCard {...p} />
               </FadeIn>
@@ -325,13 +408,14 @@ export default function Home() {
               <div className="md:w-1/2 bg-[#04044A] p-12 md:p-20 text-white flex flex-col justify-center">
                 <h2
                   className="text-[36px] md:text-[42px] mb-5 italic font-medium leading-[1.15]"
-                  style={{ fontFamily: "Newsreader, Georgia, serif" }}
+                  style={{ fontFamily: "Newsreader,  serif" }}
                 >
-                  Ready to build?
+                  {lang === "en" ? "Ready to build?" : "Sẵn Sàng Xây Dựng Điều Lớn Lao?"}
                 </h2>
                 <p className="text-[15px] text-[#c2c7cf] mb-8 leading-relaxed">
-                  We are looking for elite founders, strategic partners, and technical innovators to shape Vietnam's
-                  next decade.
+                  {lang === "en"
+                    ? '"We are looking for elite founders, strategic partners, and technical innovators to shape Vietnam\'s next decade."'
+                    : '"Chúng tôi tìm kiếm những nhà sáng lập đầy tham vọng, các đối tác chiến lược và nhà đầu tư cùng chung tầm nhìn về làn sóng tăng trưởng tiếp theo của Việt Nam."'}
                 </p>
                 <div className="space-y-4">
                   {contacts.map((c) => (
@@ -439,7 +523,7 @@ function ServiceCard({ icon, title, desc }) {
       {/* Title */}
       <h3 
         className="text-[22px] font-medium mb-3 leading-snug text-[#2c2e2e] group-hover:text-white transition-colors" 
-        style={{ fontFamily: "Newsreader, Georgia, serif" }}
+        style={{ fontFamily: "Newsreader, serif" }}
       >
         {title}
       </h3>
