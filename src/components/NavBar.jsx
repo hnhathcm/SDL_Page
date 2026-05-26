@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate} from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext'; // Adjust path to your context
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { lang, toggleLang } = useLanguage();
-
+  const navigate = useNavigate();
   const links =[
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
@@ -58,7 +58,7 @@ const Navbar = () => {
             </button>
 
             {/* Desktop CTA Button */}
-            <button className="hidden md:block px-6 py-2.5 rounded-xl font-label-caps text-label-caps bg-[#71c3fe] text-[#04044A] hover:opacity-80 transition-all">
+            <button className="hidden md:block px-6 py-2.5 rounded-xl font-label-caps text-label-caps bg-[#71c3fe] text-[#04044A] hover:opacity-80 transition-all" onClick={() => navigate('/contact')}>
               Work With Us
             </button>
           </div>

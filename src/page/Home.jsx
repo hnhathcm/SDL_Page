@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "../context/LanguageContext"; // Adjust path to your context
-import ReactPlayer from 'react-player';
 import video from "../assets/Introduction_SDL.mp4"
 
 // ── Reusable fade-in-on-scroll hook ──────────────────────────────────────────
@@ -202,9 +201,34 @@ export default function Home() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+      e.preventDefault();
+
+      // 1. Define the recipient and subject
+      const recipient = "startup@sondoonglabs.asia";
+      const subject = `Inquiry from ${formData.name} - ${formData.interest}`;
+      
+      // 2. Construct the email body
+      // Note: \n creates a new line, but it must be encoded for a URL
+      const body = `Name: ${formData.name}
+        Email: ${formData.email}
+        Interest Area: ${formData.interest}
+
+        Message:
+        ${formData.message}`;
+
+      // 3. Encode the parameters so they are URL-friendly (e.g., spaces become %20)
+      const encodedSubject = encodeURIComponent(subject);
+      const encodedBody = encodeURIComponent(body);
+
+      // 4. Construct the full mailto link
+      const mailtoLink = `mailto:${recipient}?subject=${encodedSubject}&body=${encodedBody}`;
+
+      // 5. Trigger the redirect to the Mail App
+      window.location.href = mailtoLink;
+
+      // 6. Optional: Still show the "Success" state on your website
+      setSubmitted(true);
+    };
 
   return (
     <main className="font-sans antialiased text-[#1c1b1b] bg-[#fcf9f8]">

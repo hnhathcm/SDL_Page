@@ -86,10 +86,10 @@ export default function Portfolio() {
         <div className="max-w-[1280px] mx-auto px-6 flex flex-col items-center text-center">
           <h2 className="font-headline-md text-2xl mb-8 text-[#04044A]">{lang === "en" ? "Ready to accelerate your next venture?" : "Sẵn sàng tăng tốc venture tiếp theo của bạn?"}</h2>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-[#04044A] text-white px-10 py-4 rounded-full font-label-md hover:opacity-90 transition-all flex items-center gap-2">
+            <button onClick={() => navigate('/contact')} className="bg-[#04044A] text-white px-10 py-4 rounded-full font-label-md hover:opacity-90 transition-all flex items-center gap-2">
               {lang === "en" ? "Start a Conversation" : "Bắt đầu cuộc trò chuyện"} <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
             </button>
-            <button className="border border-[#04044A]/30 text-[#04044A]  px-10 py-4 rounded-full font-label-md hover:bg-surface-container-low transition-all">
+            <button onClick={() => navigate('/services')} className="border border-[#04044A]/30 text-[#04044A]  px-10 py-4 rounded-full font-label-md hover:bg-surface-container-low transition-all">
               {lang === "en" ? "View Methodology" : "Xem Phương Pháp Vận Hành"}
             </button>
           </div>

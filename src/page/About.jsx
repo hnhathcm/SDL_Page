@@ -1,7 +1,9 @@
 import { FadeIn } from "./Home"; // Assuming you kept the FadeIn component in a shared file
 import { useLanguage } from "../context/LanguageContext";
+import { useNavigate } from "react-router-dom";
 const About = () => {
   const {lang} = useLanguage();
+  const navigate = useNavigate();
   const team ={
     "en":[
     { name: "Hoang Nhat (Leo)", role: "CO-FOUNDER", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCDQXMZYvzXwAY6X2QAfDuVssgzKrbXZts_LHQYqbx4uAmDaHkHWzZAXxo0po_WLzASY7LH8OhYuFvbGOEizoLKL1lYI8hLFJbaUlfEyc-YJtjfjJA_t2_pxAhidFYsu1KnILl_TBUW6hAMtFkf6UqQCch3XPVZb3E3xJIrgA0K47mO_fqasH_yF5GpiJLDgPx2aU8IE9C_x7TVsRxH8qa9VtsZ5M2rcVaolZxieAmXAVHhZuAYUVvad5nBOZDqMpcimW9Lg_Bmq1TsTBA", bio: "Ex-Managing Director of Godee" },
@@ -133,7 +135,7 @@ const About = () => {
                 >
                 {lang === "en" ? "Ready to build the future of " : "Sẵn sàng xây dựng tương lai cho "} <br className="hidden md:block" /> {lang === "en" ? "your business?" : "doanh nghiệp của bạn?"}
                 </h2>
-                <button className="bg-[#A0D9FF] text-on-secondary-container px-10 py-5 font-label-caps text-label-caps rounded-lg hover:opacity-90 active:scale-95 transition-all uppercase tracking-widest">
+                <button onClick={() => navigate('/contact')} className="bg-[#A0D9FF] text-on-secondary-container px-10 py-5 font-label-caps text-label-caps rounded-lg hover:opacity-90 active:scale-95 transition-all uppercase tracking-widest">
                 {lang === "en" ? "Meet us" : "Làm việc cùng chúng tôi"}
                 </button>
             </FadeIn>
