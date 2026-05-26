@@ -15,30 +15,40 @@ export default function Contact() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  // 2. Form Submission Logic
-  const handleSubmit = (e) => {
+    // 2. Form Submission Logic
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const recipient = "startup@sondoonglabs.asia";
-    const subject = `Inquiry from ${formData.name} (${formData.company || "Individual"})`;
-    
-    // Constructing the email body
-    const body = `Name: ${formData.name}
-Email: ${formData.email}
-Company: ${formData.company}
+    const formPayload = {
+      access_key: "3a389831-92c0-48a3-aa86-35663b568a3d",
+      name: formData.name,
+      email: formData.email,
+      subject: `Inquiry from ${formData.name} (${formData.company || "Individual"})`,
+      message: `Name: ${formData.name}
+  Email: ${formData.email}
+  Company: ${formData.company}
 
-Message:
-${formData.message}`;
+  Message:
+  ${formData.message}`,
+    };
 
-    // Encoding symbols for URL safety
-    const encodedSubject = encodeURIComponent(subject);
-    const encodedBody = encodeURIComponent(body);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formPayload),
+      });
 
-    // Redirect to native mail app
-    window.location.href = `mailto:${recipient}?subject=${encodedSubject}&body=${encodedBody}`;
-    
-    // Update UI to show success state
-    setSubmitted(true);
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        console.error("Submission failed:", data);
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+    }
   };
 
   return (
@@ -81,13 +91,10 @@ ${formData.message}`;
                 <div className="py-20 text-center space-y-6 animate-in fade-in zoom-in duration-500">
                   <span className="material-symbols-outlined text-[72px] text-secondary">check_circle</span>
                   <div className="space-y-2">
-                    <h2 className="text-2xl font-bold text-[#04044A]">
-                      {lang === "en" ? "Opening your Mail App..." : "Đang mở ứng dụng Mail..."}
-                    </h2>
                     <p className="text-on-surface-variant max-w-sm mx-auto">
                       {lang === "en" 
-                        ? "We've pre-filled your message. Just hit 'Send' in your email application." 
-                        : "Chúng tôi đã chuẩn bị sẵn nội dung. Bạn chỉ cần nhấn 'Gửi' trong ứng dụng email."}
+                        ? "Your message has been sent successfully!" 
+                        : "Tin nhắn của bạn đã được gửi thành công!"}
                     </p>
                   </div>
                   <button 

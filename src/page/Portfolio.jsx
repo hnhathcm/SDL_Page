@@ -1,5 +1,6 @@
 import { FadeIn } from "./Home"; // Assuming you have this component
 import {useLanguage} from "../context/LanguageContext"; // Assuming you have this context
+import { useNavigate } from "react-router-dom";
 const PortfolioCard = ({ img, title, category, desc, metric }) => {
   return (
     <FadeIn className="group flex flex-col h-full">
@@ -53,6 +54,7 @@ const portfolioData ={
 
 export default function Portfolio() {
   const {lang} = useLanguage();
+  const navigate = useNavigate();
   return (
     <main className="bg-background">
       {/* Cinematic Hero */}

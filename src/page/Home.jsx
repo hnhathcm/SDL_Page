@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "../context/LanguageContext"; // Adjust path to your context
+import { useNavigate } from "react-router-dom";
 import video from "../assets/Introduction_SDL.mp4"
 
 // ── Reusable fade-in-on-scroll hook ──────────────────────────────────────────
@@ -199,37 +200,38 @@ export default function Home() {
   });
   const { lang } = useLanguage()
   const [submitted, setSubmitted] = useState(false);
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const handleSubmit = (e) => {
-      e.preventDefault();
-
-      // 1. Define the recipient and subject
-      const recipient = "startup@sondoonglabs.asia";
-      const subject = `Inquiry from ${formData.name} - ${formData.interest}`;
-      
-      // 2. Construct the email body
-      // Note: \n creates a new line, but it must be encoded for a URL
-      const body = `Name: ${formData.name}
-        Email: ${formData.email}
-        Interest Area: ${formData.interest}
-
-        Message:
-        ${formData.message}`;
-
-      // 3. Encode the parameters so they are URL-friendly (e.g., spaces become %20)
-      const encodedSubject = encodeURIComponent(subject);
-      const encodedBody = encodeURIComponent(body);
-
-      // 4. Construct the full mailto link
-      const mailtoLink = `mailto:${recipient}?subject=${encodedSubject}&body=${encodedBody}`;
-
-      // 5. Trigger the redirect to the Mail App
-      window.location.href = mailtoLink;
-
-      // 6. Optional: Still show the "Success" state on your website
-      setSubmitted(true);
+    const formPayload = {
+      access_key: "3a389831-92c0-48a3-aa86-35663b568a3d", // from web3forms.com
+      name: formData.name,
+      email: formData.email,
+      subject: `Inquiry from ${formData.name} - ${formData.interest}`,
+      message: `Interest Area: ${formData.interest}\n\nMessage:\n${formData.message}`,
     };
 
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formPayload),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        console.error("Submission failed:", data);
+        // Optionally show an error state to the user
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+      // Optionally show an error state to the user
+    }
+  };
   return (
     <main className="font-sans antialiased text-[#1c1b1b] bg-[#fcf9f8]">
 
@@ -269,10 +271,10 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-[#71c3fe] text-[#001e30] px-8 py-4 rounded-lg font-bold text-[15px] hover:opacity-90 transition-opacity">
+              <button className="bg-[#71c3fe] text-[#001e30] px-8 py-4 rounded-lg font-bold text-[15px] hover:opacity-90 transition-opacity" onClick={() => navigate("/contact")}>
                 {lang === "en" ? "Start a Venture" : "Khởi Tạo Dự Án"}
               </button>
-              <button className="border border-white/30 text-white px-8 py-4 rounded-lg font-bold text-[15px] hover:bg-white/10 transition-colors backdrop-blur-sm">
+              <button className="border border-white/30 text-white px-8 py-4 rounded-lg font-bold text-[15px] hover:bg-white/10 transition-colors backdrop-blur-sm" onClick={() => navigate("/portfolio")}>
                 {lang === "en" ? "View Portfolio" : "Xem Danh Mục Đầu Tư"}
               </button>
             </div>
@@ -316,7 +318,6 @@ export default function Home() {
               <video
                 className="w-full h-full object-cover"
                 controls
-                poster="https://lh3.googleusercontent.com/aida-public/AB6AXuAAzh7jAiJRutg8IyCgWnzR92x5drT25WdUKZVj309P6Mgclw8kbnqBd6FdP3lafDTbd1Wlba3ai33uRPfph2Lkm-eRBWs7KMU8K5SY6sEo9cAv4fNt_yU75639SPPKOA8bb-5I3bV-beZHmMpDCtpjy3RN2YETk_-UL0VkOm4ow35_kZS06wffsYiQkr-UKmtTUpxwZ6zXo3riJpDQalUNELZesqw9PF0zgO-iA5jL9zDN1PKvxJP7d9mCx1NlfubaPdcBga4rgatW" // Image shown before play
               >
                 <source src={video} type="video/mp4" />
                 Your browser does not support the video tag.
