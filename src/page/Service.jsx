@@ -169,10 +169,10 @@ export default function Services() {
               {lang === "en" ? "Ready to build the future of your business?" : "Sẵn sàng xây dựng tương lai cho doanh nghiệp của bạn?"}
             </h2>
             <div className="flex flex-col md:flex-row justify-center gap-6">
-              <button onClick={() => navigate('/contact')} className="bg-[#04044A] text-white px-10 py-4 rounded-full font-label-caps hover:opacity-90 transition-all uppercase" onClick={() => navigate("/contact")}>
+              <button onClick={() => navigate('/contact')} className="bg-[#04044A] text-white px-10 py-4 rounded-full font-label-caps hover:opacity-90 transition-all uppercase">
                 {lang === "en" ? "START A VENTURE" : "BẮT ĐẦU MỘT VENTURE"}
               </button>
-              <button onClick={() => navigate('/portfolio')} className="border border-outline text-on-surface px-10 py-4 rounded-full font-label-caps hover:bg-surface-container-low transition-all uppercase" onClick={() => navigate("/portfolio")}>
+              <button onClick={() => navigate('/portfolio')} className="border border-outline text-on-surface px-10 py-4 rounded-full font-label-caps hover:bg-surface-container-low transition-all uppercase">
                 {lang === "en" ? "REQUEST PORTFOLIO" : "XEM PORTFOLIO"}
               </button>
             </div>
