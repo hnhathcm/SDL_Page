@@ -25,7 +25,7 @@ const About = () => {
 };
   const info = {
     "en": [
-                { title: "ENTITY NAME", val: "CÔNG TY TNHH SONDOONG LABS" },
+                { title: "ENTITY NAME", val: "SONDOONG LABS COMPANY LIMITED" },
                 { title: "HEADQUARTERS", val: "Saigon Paragon Building, HCMC, Vietnam." },
                 { title: "SECTOR FOCUS", val: "Venture Builder" }
               ],

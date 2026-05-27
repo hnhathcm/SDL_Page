@@ -259,15 +259,15 @@ export default function Home() {
 
             <h1
               className="text-[42px] md:text-[64px] text-white mb-8 leading-[1.1] font-medium tracking-[-0.02em]"
-              style={{ fontFamily: "Newsreader, Georgia, serif" }}
+              style={{ fontFamily: "Alfa Slab One, serif" }}
             >
               {lang === "en" ? "A Startup Program for Founders by Founders" : "Chương Trình Khởi Nghiệp Dành Cho Nhà Sáng Lập, Được Xây Dựng Bởi Chính Những Nhà Sáng Lập"}
             </h1>
 
             <p className="text-[16px] text-[#d8d8d8] max-w-2xl mb-10 leading-relaxed">
               {lang === "en"
-                ? '"SonDoong Labs is an independent privately owned venture builder cum investment management company that aims to support early-stage and growth startups."'
-                : '"SonDoong Labs là một công ty xây dựng doanh nghiệp (venture builder) kết hợp quản lý đầu tư độc lập, thuộc sở hữu tư nhân, với sứ mệnh hỗ trợ các startup giai đoạn đầu và đang tăng trưởng phát triển bền vững. Labs là một công ty xây dựng doanh nghiệp độc lập và sở hữu tư nhân, kết hợp với quản lý đầu tư, nhằm hỗ trợ các startup giai đoạn đầu và có tiềm năng tăng trưởng."'}
+                ? 'SonDoong Labs is an independent privately owned venture builder cum investment management company that aims to support early-stage and growth startups.'
+                : 'SonDoong Labs là một công ty xây dựng doanh nghiệp (venture builder) kết hợp quản lý đầu tư độc lập, thuộc sở hữu tư nhân, với sứ mệnh hỗ trợ các startup giai đoạn đầu và đang tăng trưởng phát triển bền vững. Labs là một công ty xây dựng doanh nghiệp độc lập và sở hữu tư nhân, kết hợp với quản lý đầu tư, nhằm hỗ trợ các startup giai đoạn đầu và có tiềm năng tăng trưởng.'}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -335,8 +335,8 @@ export default function Home() {
             <h2 className="text-[24px] font-bold text-[#2c2e2e] mb-3">{lang === "en" ? "What We Do" : "Chúng Tôi Làm Gì"}</h2>
             <p className="text-[14px] text-[#42474e] max-w-xl mx-auto">
               {lang === "en"
-                ? '"A comprehensive ecosystem designed to de-risk startup growth from ideation to exit."'
-                : '"Một hệ sinh thái toàn diện giúp giảm thiểu rủi ro tăng trưởng cho startup từ giai đoạn hình thành ý tưởng đến khi mở rộng hoặc thoái vốn."'}
+                ? 'A comprehensive ecosystem designed to de-risk startup growth from ideation to exit.'
+                : 'Một hệ sinh thái toàn diện giúp giảm thiểu rủi ro tăng trưởng cho startup từ giai đoạn hình thành ý tưởng đến khi mở rộng hoặc thoái vốn.'}
             </p>
           </FadeIn>
 
@@ -440,8 +440,8 @@ export default function Home() {
                 </h2>
                 <p className="text-[15px] text-[#c2c7cf] mb-8 leading-relaxed">
                   {lang === "en"
-                    ? '"We are looking for elite founders, strategic partners, and technical innovators to shape Vietnam\'s next decade."'
-                    : '"Chúng tôi tìm kiếm những nhà sáng lập đầy tham vọng, các đối tác chiến lược và nhà đầu tư cùng chung tầm nhìn về làn sóng tăng trưởng tiếp theo của Việt Nam."'}
+                    ? 'We are looking for elite founders, strategic partners, and technical innovators to shape Vietnam\'s next decade.'
+                    : 'Chúng tôi tìm kiếm những nhà sáng lập đầy tham vọng, các đối tác chiến lược và nhà đầu tư cùng chung tầm nhìn về làn sóng tăng trưởng tiếp theo của Việt Nam.'}
                 </p>
                 <div className="space-y-4">
                   {contacts.map((c) => (
