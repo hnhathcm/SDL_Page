@@ -190,7 +190,7 @@ const portfolio = {
 // ── Contact info ──────────────────────────────────────────────────────────────
 const contacts = [
   { icon: "mail", text: "startup@sondoonglabs.asia" },
-  { icon: "location_on", text: "Tan My Ward, Ho Chi Minh City, Vietnam" },
+  { icon: "location_on", text: "Saigon Paragon, Tan My Ward, Ho Chi Minh City, Vietnam" },
 ];
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -259,7 +259,7 @@ export default function Home() {
 
             <h1
               className="text-[42px] md:text-[64px] text-white mb-8 leading-[1.1] font-medium tracking-[-0.02em]"
-              style={{ fontFamily: "Alfa Slab One, serif" }}
+              style={lang === "en" ? { fontFamily: "Merriweather Sans, sans-serif", fontWeight: 500 } : { fontFamily: "Akt, serif", fontWeight: 400 }}
             >
               {lang === "en" ? "A Startup Program for Founders by Founders" : "Chương Trình Khởi Nghiệp Dành Cho Nhà Sáng Lập, Được Xây Dựng Bởi Chính Những Nhà Sáng Lập"}
             </h1>
