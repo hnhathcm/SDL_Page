@@ -2,8 +2,8 @@ import { useLanguage } from "../context/LanguageContext";
 const Footer = () => {
   const {lang} = useLanguage();
   return (
-    <footer className="bg-[#04044A] w-full py-20 border-t border-white/10 text-white">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mx-auto px-6">
+    <footer className="bg-[#04044A] w-full py-20 border-t border-white/10 text-white ">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mx-auto px-6 max-w-[1280px]">
         
         {/* Brand Column */}
         <div className="md:col-span-4">
@@ -50,7 +50,7 @@ const Footer = () => {
         {/* Newsletter */}
             <div className="md:col-span-4">
             <h5 className="font-label-caps text-label-caps text-white mb-6">Newsletter</h5>
-            <div className="flex border-b border-white/30 pb-2">
+            <div className="flex border-b border-white/30 pb-2 max-w-[320px]">
                 <input 
                 className="bg-transparent border-none focus:ring-0 w-full p-0 font-body-md text-body-md text-white placeholder-white/40" 
                 placeholder={lang === "en" ? "Email address" : "Địa chỉ email"} 
@@ -58,14 +58,14 @@ const Footer = () => {
                 />
                 {/* Button with Left Arrow Icon */}
                 <button className="text-white hover:text-secondary transition-colors flex items-center">
-                <span className="material-symbols-outlined">arrow_forward</span>
+                  <span className="material-symbols-outlined">arrow_forward</span>
                 </button>
             </div>
         </div>
       </div>
       
       {/* Copyright */}
-      <div className=" mx-auto px-6 mt-20 pt-8 border-t border-white/5">
+      <div className="max-w-[1280px] mx-auto px-6 mt-20 pt-8 border-t border-white/5 flex items-center justify-start">
         <p className="font-label-caps text-[10px] text-white/40 tracking-widest uppercase">
           © 2024 SONDOONG LABS. REFINING STRATEGY THROUGH SOUTHEAST ASIAN GROWTH.
         </p>

@@ -22,12 +22,13 @@ const Navbar = () => {
           
           {/* LEFT SIDE: Logo + Links */}
           <div className="flex items-center gap-12">
-            <img 
-              alt="Logo" 
-              className="h-10 w-auto object-contain brightness-0 invert" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcz8suMjFuMj0xc0Xi-sjKJmsEUGGFc-qJ5mF6KX8LY3Ncnk67cAia8HN3AJz4VpauX7c2QlcvluxYlzlbU0D5nDjJa4uQHLHbcmUi651IgupGNlDL3RcOBq9Mv_Ffq019dKzSEX20VHwceDrkZuJmX291qjb8VMkjylmjl4j4Fw50VSxfHiyrPujaYHiAO6WOqEPSNgMNHFwJp2LFCynLMZz06CxJ-Q4XVFXBKG7JHaUc2biphe62u06fIQqtl1l4vWtqzgrym2NiUa4" 
-            />
-
+            <a href='/'>
+              <img 
+                alt="Logo" 
+                className="h-10 w-auto object-contain brightness-0 invert" 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcz8suMjFuMj0xc0Xi-sjKJmsEUGGFc-qJ5mF6KX8LY3Ncnk67cAia8HN3AJz4VpauX7c2QlcvluxYlzlbU0D5nDjJa4uQHLHbcmUi651IgupGNlDL3RcOBq9Mv_Ffq019dKzSEX20VHwceDrkZuJmX291qjb8VMkjylmjl4j4Fw50VSxfHiyrPujaYHiAO6WOqEPSNgMNHFwJp2LFCynLMZz06CxJ-Q4XVFXBKG7JHaUc2biphe62u06fIQqtl1l4vWtqzgrym2NiUa4" 
+              />
+            </a>
             <div className="hidden md:flex items-center gap-8">
               {links.map((link) => (
                 <NavLink 

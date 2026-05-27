@@ -166,7 +166,7 @@ const portfolio = {
     },
     {
       name: "Levents Global",
-      sub: "Fashion Brand for GenZ with 10M+/year",
+      sub: "Fashion Brand for GenZ",
       tag: "CONSUMER",
       img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBEmB9YscXNPopAL8TIah-DRBQ-cEooGTXHoROAahwwN6iP-6oyc7Q1W4I9ub5UnAQ8UaIga6LcNpdZsHQp8qAf_8jr4e33Chw4h-5XTMLg3b6NdpzalXCFxNf6JC9f0dQnBFl0TVX10NS7MrW6paIp2IsQIlflm1Mc3bAtICtwTzFBg8yClNI_V8ciyKX2bKVZ5Ew6SgUSk8OlJpDkBQz8j9tXk1D0nYjaD0o9GVCGWbjfpGHv_kUANOP1NDDp8f2v5z1UaViMX02Yzm0",
     },
