@@ -108,8 +108,8 @@ export default function Services() {
         <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
           <div className="md:col-span-8">
             <FadeIn>
-              <span className="font-label-caps text-secondary mb-6 block uppercase tracking-widest">{lang === "en" ? "OUR CAPABILITIES" : "NĂNG LỰC CỦA CHÚNG TÔI"}</span>
-              <h1 className="font-display-lg text-4xl md:text-6xl mb-8 max-w-4xl font-medium text-on-surface">
+              <span className="font-label-caps text-secondary mb-6 block uppercase tracking-widest" style={{ fontFamily: "Manrope, sans-serif" }}>{lang === "en" ? "OUR CAPABILITIES" : "NĂNG LỰC CỦA CHÚNG TÔI"}</span>
+              <h1 className="font-display-lg text-4xl md:text-6xl mb-8 max-w-4xl font-medium text-on-surface" style={lang === "en" ? { fontFamily: "Merriweather Sans, sans-serif", fontWeight: 500 } : { fontFamily: "Akt, serif", fontWeight: 500 }}>
                 <span className="italic text-[#006493]">{lang === "en" ? "Strategic Support" : "Hỗ Trợ Chiến Lược"} </span>{lang === "en" ? "for High-Growth Startups" : "cho Các Startup Tăng Trưởng Cao"}
               </h1>
             </FadeIn>
@@ -150,7 +150,7 @@ export default function Services() {
       {/* 3. VC Partners */}
       <section className="py-24 bg-surface">
         <div className="max-w-[1280px] mx-auto px-6">
-          <h2 className="font-display-lg text-4xl md:text-5xl text-center mb-16 font-medium text-on-surface">{lang === "en" ? "Our VC Partners" : "Đối Tác VC Của Chúng Tôi"}</h2>
+          <h2 className="font-display-lg text-4xl md:text-5xl text-center mb-16 font-medium text-on-surface" style={lang === "en" ? { fontFamily: "Merriweather Sans, sans-serif", fontWeight: 500 } : { fontFamily: "Akt, serif", fontWeight: 500 }}>{lang === "en" ? "Our VC Partners" : "Đối Tác VC Của Chúng Tôi"}</h2>
           <div className="flex flex-wrap justify-center items-center gap-y-16 gap-x-48 opacity-70">
             {partners.map((p, i) => (
               <FadeIn key={i} delay={i * 100}>
@@ -165,7 +165,7 @@ export default function Services() {
       <section className="py-[120px] bg-surface">
         <div className="max-w-[1280px] mx-auto px-6 text-center">
           <FadeIn>
-            <h2 className="font-display-lg text-4xl md:text-5xl mb-12 text-on-surface">
+            <h2 className="font-display-lg text-4xl md:text-5xl mb-12 text-on-surface" style={lang === "en" ? { fontFamily: "Merriweather Sans, sans-serif", fontWeight: 500 } : { fontFamily: "Akt, serif", fontWeight: 500 }}>
               {lang === "en" ? "Ready to build the future of your business?" : "Sẵn sàng xây dựng tương lai cho doanh nghiệp của bạn?"}
             </h2>
             <div className="flex flex-col md:flex-row justify-center gap-6">

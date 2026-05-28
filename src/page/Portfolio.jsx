@@ -1,26 +1,33 @@
 import { FadeIn } from "./Home"; // Assuming you have this component
 import {useLanguage} from "../context/LanguageContext"; // Assuming you have this context
 import { useNavigate } from "react-router-dom";
+
 const PortfolioCard = ({ img, title, category, desc, metric }) => {
   return (
     <FadeIn className="group flex flex-col h-full">
-      <div className="aspect-[4/3] overflow-hidden rounded-lg mb-6 bg-surface-container-low">
+      {/* Container with background and fixed aspect ratio */}
+      <div className="aspect-[4/3] overflow-hidden rounded-lg mb-6 bg-surface-container-low flex items-center justify-center">
         <img
           alt={title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          // object-contain: keeps the whole image visible
+          // p-8: Adds padding so logos don't touch the container edges
+          className="w-full h-full object-contain p-8 transition-transform duration-500 group-hover:scale-105"
           src={img}
         />
       </div>
+      
       <div className="flex items-center justify-between mb-3">
         <h3 className="font-headline-md text-xl text-brand-navy">{title}</h3>
         <span className="px-2 py-1 bg-surface-container-high rounded text-[10px] font-label-md uppercase text-brand-navy/60">
           {category}
         </span>
       </div>
+      
       <p className="font-body-md text-on-surface-variant mb-4 flex-grow text-sm">
         {desc}
       </p>
-      <p className="font-label-md text-[10px] text-[#006493] font-weight-bold uppercase tracking-tighter">
+      
+      <p className="font-label-md text-[10px] text-[#006493] font-bold uppercase tracking-tighter">
         {metric}
       </p>
     </FadeIn>
@@ -62,8 +69,8 @@ export default function Portfolio() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           <div className="md:col-span-8">
             <p className="font-label-md text-[#006493] mb-4 uppercase tracking-widest">Portfolio</p>
-            <h1 className="font-display-lg text-6xl md:text-[84px] leading-none mb-8 text-brand-navy">
-              <span className="italic font-normal">{lang === "en" ? "Building the Future" : "Xây Dựng Tương Lai"}</span> {lang === "en" ? "of Growth." : "của Sự Phát Triển."}
+            <h1 className="font-display-lg text-6xl md:text-[84px] leading-none mb-8 text-[#006493]" style={lang === "en" ? { fontFamily: "Merriweather Sans, sans-serif", fontWeight: 500 } : { fontFamily: "Akt, serif", fontWeight: 500 }}>
+              <span className="italic font-normal text-black">{lang === "en" ? "Building the Future" : "Xây Dựng Tương Lai"}</span> {lang === "en" ? "of Growth." : "của Sự Phát Triển."}
             </h1>
           </div>
           <div className="md:col-span-4 flex flex-col justify-end">

@@ -58,10 +58,10 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
           <div className="md:col-span-8">
             <FadeIn>
-              <span className="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em] mb-4 block">
+              <span className="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em] mb-4 block" style={{ fontFamily: "Manrope, sans-serif" }}>
                 {lang === "en" ? "Connect With Us" : "KẾT NỐI CÙNG CHÚNG TÔI"}
               </span>
-              <h1 className="font-display-lg text-4xl md:text-6xl mb-8 text-[#04044A] leading-tight">
+              <h1 className="font-display-lg text-4xl md:text-6xl mb-8 text-[#04044A] leading-tight" style={lang === "en" ? { fontFamily: "Merriweather Sans, sans-serif", fontWeight: 500 } : { fontFamily: "Akt, serif", fontWeight: 500 }}>
                 {lang === "en" ? "Let's Build the Next Stage of Growth Together" : "Hãy Cùng Xây Dựng Giai Đoạn Tăng Trưởng Tiếp Theo"}
               </h1>
             </FadeIn>
@@ -206,7 +206,7 @@ export default function Contact() {
               <span className="text-[11px] font-bold text-secondary uppercase tracking-[0.25em]">
                 {lang === 'en' ? "Our Regional HQ" : "Trụ Sở Khu Vực"}
               </span>
-              <h2 className="text-3xl md:text-4xl text-[#04044A] font-medium leading-snug">
+              <h2 className="text-3xl md:text-4xl text-[#04044A] font-medium leading-snug" style={lang === "en" ? { fontFamily: "Merriweather Sans, sans-serif", fontWeight: 500 } : { fontFamily: "Akt, serif", fontWeight: 500 }}>
                 {lang === 'en' ? "Ho Chi Minh City: The Gateway to Vietnam's Innovation" : "Thành phố Hồ Chí Minh: Cánh Cửa Đổi Mới Sáng Tạo Của Việt Nam"}
               </h2>
               <div className="flex gap-5 items-start">

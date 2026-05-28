@@ -48,11 +48,11 @@ const About = () => {
               <span className="font-label-caps text-secondary mb-6 block uppercase tracking-[0.2em]">
                 {lang === "en" ? "ABOUT SONDOONG LABS" : "VỀ SONDOONG LABS"}
               </span>
-              <h1 className="font-display-lg text-4xl md:text-[64px] mb-8 leading-[1.1] text-brand-navy">
-                {lang === "en" ? "Building Ventures With Founders, Operators, and " : "Xây Dựng Venture Cùng Founder, Operator Và "} 
-                <span className="italic font-normal">
+              <h1 className="font-display-lg text-4xl md:text-[64px] mb-8 leading-[1.1] text-brand-navy" style = {lang === "en" ? { fontFamily: "Merriweather Sans, sans-serif", fontWeight: 500 } : { fontFamily: "Akt, serif", fontWeight: 500 }}>
+                {lang === "en" ? "Building Ventures With Founders, Operators and " : "Xây Dựng Venture Cùng Founder, Operator Và"} 
+                <span className="italic font-normal text-[#006493]" >
                   {lang === "en" ? "Long-Term Vision" : "Tầm Nhìn Dài Hạn"}
-                </span>.
+                </span>
               </h1>
             </FadeIn>
           </div>
@@ -131,7 +131,7 @@ const About = () => {
             <FadeIn>
                 <h2 
                 className="text-[32px] md:text-[56px] mb-10 leading-tight italic font-medium text-white"
-                style={{ fontFamily: "Newsreader, Georgia, serif" }}
+                style={lang === "en" ? { fontFamily: "Merriweather Sans, sans-serif", fontWeight: 500 } : { fontFamily: "Akt, serif", fontWeight: 500 }}
                 >
                 {lang === "en" ? "Ready to build the future of " : "Sẵn sàng xây dựng tương lai cho "} <br className="hidden md:block" /> {lang === "en" ? "your business?" : "doanh nghiệp của bạn?"}
                 </h2>

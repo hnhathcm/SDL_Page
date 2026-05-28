@@ -188,10 +188,16 @@ const portfolio = {
 };
 
 // ── Contact info ──────────────────────────────────────────────────────────────
-const contacts = [
-  { icon: "mail", text: "startup@sondoonglabs.asia" },
-  { icon: "location_on", text: "Saigon Paragon, Tan My Ward, Ho Chi Minh City, Vietnam" },
-];
+const contacts = {
+  "en": [
+    { icon: "mail", text: "startup@sondoonglabs.asia" },
+    { icon: "location_on", text: "Saigon Paragon, Tan My Ward, Ho Chi Minh City, Vietnam" },
+  ],
+  "vi": [
+    { icon: "mail", text: "startup@sondoonglabs.asia" },
+    { icon: "location_on", text: "Tòa nhà Saigon Paragon, Phường Tân Mỹ, Thành phố Hồ Chí Minh, Việt Nam" },
+  ]
+};
 
 // ════════════════════════════════════════════════════════════════════════════
 export default function Home() {
@@ -259,7 +265,7 @@ export default function Home() {
 
             <h1
               className="text-[42px] md:text-[64px] text-white mb-8 leading-[1.1] font-medium tracking-[-0.02em]"
-              style={lang === "en" ? { fontFamily: "Merriweather Sans, sans-serif", fontWeight: 500 } : { fontFamily: "Akt, serif", fontWeight: 400 }}
+              style={lang === "en" ? { fontFamily: "Merriweather Sans, sans-serif", fontWeight: 500 } : { fontFamily: "Akt, serif", fontWeight: 500 }}
             >
               {lang === "en" ? "A Startup Program for Founders by Founders" : "Chương Trình Khởi Nghiệp Dành Cho Nhà Sáng Lập, Được Xây Dựng Bởi Chính Những Nhà Sáng Lập"}
             </h1>
@@ -298,7 +304,7 @@ export default function Home() {
               <span className="text-[11px] font-semibold tracking-[0.15em] uppercase text-[#2c2e2e] mb-4 block" style={{ fontFamily: "Manrope, sans-serif" }}>
                 {lang === "en" ? "ABOUT SONDOONG LABS" : "VỀ SONDOONG LABS"}
               </span>
-              <h2 className="text-[24px] text-[#2c2e2e] mb-6 italic font-semibold leading-[1.4]" style={{ fontFamily: "Newsreader, serif" }}>
+              <h2 className="text-[24px] text-[#2c2e2e] mb-6 italic font-semibold leading-[1.4]" style={lang === "en" ? { fontFamily: "Merriweather Sans, sans-serif", fontWeight: 500 } : { fontFamily: "Akt, serif", fontWeight: 500 }}>
                 {lang === "en"
                   ? "Beyond capital, we help build the foundation behind enduring companies."
                   : "Không chỉ là nguồn vốn, chúng tôi xây dựng nền tảng cho những doanh nghiệp trường tồn."}
@@ -359,7 +365,7 @@ export default function Home() {
               <FadeIn>
                 <h2
                   className="text-[36px] md:text-[42px] text-white mb-10 italic font-medium leading-[1.15]"
-                  style={{ fontFamily: "Newsreader, serif" }}
+                  style={lang === "en" ? { fontFamily: "Merriweather Sans, sans-serif", fontWeight: 500 } : { fontFamily: "Akt, serif", fontWeight: 500 }}
                 >
                   {lang === "en" ? "Why SonDoong Labs?" : "Vì Sao Là SonDoong Labs?"}
                 </h2>
@@ -434,7 +440,7 @@ export default function Home() {
               <div className="md:w-1/2 bg-[#04044A] p-12 md:p-20 text-white flex flex-col justify-center">
                 <h2
                   className="text-[36px] md:text-[42px] mb-5 italic font-medium leading-[1.15]"
-                  style={{ fontFamily: "Newsreader,  serif" }}
+                  style={lang === "en" ? { fontFamily: "Merriweather Sans, sans-serif", fontWeight: 500 } : { fontFamily: "Akt, serif", fontWeight: 500 }}
                 >
                   {lang === "en" ? "Ready to build?" : "Sẵn Sàng Xây Dựng Điều Lớn Lao?"}
                 </h2>
@@ -444,7 +450,7 @@ export default function Home() {
                     : 'Chúng tôi tìm kiếm những nhà sáng lập đầy tham vọng, các đối tác chiến lược và nhà đầu tư cùng chung tầm nhìn về làn sóng tăng trưởng tiếp theo của Việt Nam.'}
                 </p>
                 <div className="space-y-4">
-                  {contacts.map((c) => (
+                  {contacts[lang]?.map((c) => (
                     <div key={c.text} className="flex items-center gap-4 text-[#71c3fe]">
                       <span className="material-symbols-outlined text-[20px]">{c.icon}</span>
                       <span className="text-[14px] text-white">{c.text}</span>
@@ -563,20 +569,21 @@ function ServiceCard({ icon, title, desc }) {
 }
 
 function PortfolioCard({ img, name, sub, tag }) {
+  const { lang } = useLanguage()
   return (
     <div className="group cursor-pointer">
-      <div className="aspect-[16/10] overflow-hidden rounded-lg mb-5 bg-[#e5e2e1]">
+      <div className="aspect-[16/10] overflow-hidden rounded-lg mb-5 bg-[#ffffff]">
         <img
           src={img}
           alt={name}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
         />
       </div>
       <div className="flex justify-between items-start">
         <div>
           <h4
             className="text-[22px] font-medium text-[#2c2e2e] group-hover:text-[#006493] transition-colors"
-            style={{ fontFamily: "Newsreader, Georgia, serif" }}
+            style={lang === "en" ? { fontFamily: "Merriweather Sans, sans-serif", fontWeight: 500 } : { fontFamily: "Akt, serif", fontWeight: 500 }}
           >
             {name}
           </h4>

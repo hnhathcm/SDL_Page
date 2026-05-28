@@ -205,7 +205,7 @@ export default function Blog() {
         <div className="flex flex-col md:flex-row justify-between items-end gap-8">
           <div className="max-w-3xl">
             <span className="font-label-caps text-[#006493] uppercase tracking-widest mb-4 block">Series Spotlight</span>
-            <h1 className="font-display-lg text-6xl leading-none mb-6 text-[#04044A]">Weekend Coffee</h1>
+            <h1 className="font-display-lg text-6xl leading-none mb-6 text-[#04044A]" style={lang === "en" ? { fontFamily: "Merriweather Sans, sans-serif", fontWeight: 500 } : { fontFamily: "Akt, serif", fontWeight: 500 }}>{lang === "en" ? "Weekend Coffee" : "Cà Phê Cuối Tuần"}</h1>
             <p className="font-body-lg text-on-surface-variant max-w-xl">A collection of weekly observations, business strategies, and regional insights from the frontlines of venture building in Vietnam.</p>
           </div>
           <div className="w-full md:w-80">
@@ -248,11 +248,17 @@ export default function Blog() {
       {/* Newsletter Subscription */}
       <section className="mb-24">
         <div className="bg-surface-container-low rounded-xl p-12 md:p-20 border border-outline-variant/10 text-center max-w-4xl mx-auto shadow-sm">
-          <span className="font-label-caps text-secondary uppercase mb-4 block">{lang === "en" ? "THE WEEKEND BRIEF" : "TIN TỨC TUẦN"}</span>
-          <h2 className="text-4xl font-display-lg text-[#04044A] mb-6">{lang === "en" ? "Stay ahead with the architecture of growth." : "Cập nhật xu hướng phát triển cùng Sondong Labs."}</h2>
+          <span className="font-label-caps text-secondary uppercase mb-4 block" style={{ fontFamily: "Manrope, sans-serif" }}>
+            {lang === "en" ? "THE WEEKEND BRIEF" : "TIN TỨC TUẦN"}
+          </span>
+          <h2 className="text-4xl font-display-lg text-[#04044A] mb-6" style={lang === "en" ? { fontFamily: "Merriweather Sans, sans-serif", fontWeight: 500 } : { fontFamily: "Akt, serif", fontWeight: 500 }}>
+            {lang === "en" ? "Stay ahead with the architecture of growth." : "Cập nhật xu hướng phát triển cùng Sondong Labs."}
+          </h2>
           <form className="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
             <input className="flex-grow bg-white border border-outline-variant rounded-lg px-6 py-3 focus:outline-none focus:border-[#04044A]" placeholder="email@business.com" type="email" />
-            <button className="bg-[#04044A] text-white px-8 py-3 rounded-lg font-bold hover:opacity-90 transition-all">{lang === "en" ? "Subscribe" : "Đăng Ký"} </button>
+            <button className="bg-[#04044A] text-white px-8 py-3 rounded-lg font-bold hover:opacity-90 transition-all">
+              {lang === "en" ? "Subscribe" : "Đăng Ký"}
+            </button>
           </form>
         </div>
       </section>
