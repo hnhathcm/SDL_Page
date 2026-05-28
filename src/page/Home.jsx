@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "../context/LanguageContext"; // Adjust path to your context
 import { useNavigate } from "react-router-dom";
-import video from "../assets/Introduction_SDL.mp4"
+
 
 // ── Reusable fade-in-on-scroll hook ──────────────────────────────────────────
 function useFadeIn(threshold = 0.15) {
@@ -325,7 +325,7 @@ export default function Home() {
                 className="w-full h-full object-cover"
                 controls
               >
-                <source src={video} type="video/mp4" />
+                <source src={"temp.mp4"} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
 
