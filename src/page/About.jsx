@@ -73,7 +73,7 @@ const About = () => {
       </section>
 
       {/* Corporate Profile */}
-      <section className="bg-surface-container-low py-24">
+      <section className="bg-[#f6f3f2] py-24">
         <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
             <div className="aspect-square bg-[#04044A] rounded-xl flex items-center justify-center p-12">
