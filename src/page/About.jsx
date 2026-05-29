@@ -97,12 +97,12 @@ const About = () => {
       {/* Vision & Mission */}
       <section className="py-24 px-6 max-w-[1280px] mx-auto grid md:grid-cols-2 gap-24">
         <FadeIn>
-          <span className="text-secondary mb-4 block uppercase tracking-widest text-xs">{lang === "en" ? "01 / OUR VISION" : "01 / TẦM NHÌN"}</span>
+          <span className="text-[#006493] mb-4 block uppercase tracking-widest text-xs" sstyle={{ fontFamily: "Manrope, sans-serif" }}>{lang === "en" ? "01 / OUR VISION" : "01 / TẦM NHÌN"}</span>
           <h3 className="text-2xl font-bold mb-6">{lang === "en" ? "To build a stronger foundation for the next generation of startups in Southeast Asia." : "Xây dựng nền tảng vững chắc cho thế hệ startup tiếp theo tại Đông Nam Á.."}</h3>
           <p className="text-on-surface-variant">{lang === "en" ? "We believe ambitious founders need more than capital to scale. SonDoong Labs supports ventures through operational execution, strategic guidance, talent networks, and long-term partnerships that help businesses grow sustainably." : "Chúng tôi tin rằng founder cần nhiều hơn chỉ nguồn vốn để phát triển doanh nghiệp. SonDoong Labs đồng hành cùng startup thông qua hỗ trợ vận hành, chiến lược, mạng lưới nhân sự và hợp tác dài hạn nhằm giúp doanh nghiệp tăng trưởng bền vững."}</p>
         </FadeIn>
         <FadeIn delay={200}>
-          <span className="text-secondary mb-4 block uppercase tracking-widest text-xs">{lang === "en" ? "02 / OUR MISSION" : "02 / SỨ MỆNH"}</span>
+          <span className="text-[#006493] mb-4 block uppercase tracking-widest text-xs" style={{ fontFamily: "Manrope, sans-serif" }}>{lang === "en" ? "02 / OUR MISSION" : "02 / SỨ MỆNH"}</span>
           <h3 className="text-2xl font-bold mb-6">{lang === "en" ? "To work alongside founders in building scalable and resilient businesses." : "Đồng hành cùng founder để xây dựng những doanh nghiệp có khả năng tăng trưởng bền vững."}</h3>
           <p className="text-on-surface-variant">{lang === "en" ? "We support startups across growth, operations, talent, positioning, and fundraising through hands-on execution and ecosystem connectivity, helping ventures overcome scaling challenges from early stage to expansion." : "Chúng tôi hỗ trợ startup trong các lĩnh vực tăng trưởng, vận hành, nhân sự, định vị và gọi vốn thông qua thực thi thực tế và kết nối hệ sinh thái, giúp doanh nghiệp vượt qua những thách thức trong quá trình mở rộng."}</p>
         </FadeIn>
