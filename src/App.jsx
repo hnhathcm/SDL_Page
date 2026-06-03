@@ -27,7 +27,6 @@ function PageTracker() {
   
 
 function App() {
-  usePageTracking();
   return (
     <Router>
       <PageTracker />
