@@ -1,6 +1,7 @@
 import { FadeIn } from "./Home"; // Assuming you have this component
 import {useLanguage} from "../context/LanguageContext"; // Assuming you have this context
 import { useNavigate } from "react-router-dom";
+import apptronikImg from "../assets/mercedesrobots01.jpg";
 
 const PortfolioCard = ({ img, title, category, desc, metric }) => {
   return (
@@ -43,7 +44,7 @@ const portfolioData ={
     { title: "Levents Global", category: "Consumer", desc: "Leading GenZ fashion brand with significant regional footprint and exclusive Sanrio collaborations.", metric: "240B Annual Revenue (VND)", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDj5p1GI2bCRFsDQ5EiurYz8qQlk2eC3akZbgyYegrEKYfBvAPZ2hDGvGw-nYSEFD-2avU-sYbI5jSW28Qzso62sGGnfwd0QfokmN30WBZVDaQMoD_YNeXnQq2zJiFuOlYg29dX8mlQ-6SkelZ_566gT3kiJD_eyEO6qfP994Nx1FnYQEhhFyhnLzRqZ7mdgM1ptfYJroRRmbLml-TLNeo2JPgFHhhT_yY9NqbPefUISW_CFKNjhFdgLtEZhv-rmVnZB86PCCUhy6sr" },
     { title: "Finfan", category: "Fintech", desc: "Supporting the next generation of international payment infrastructure. Series A Facilitation. VC Network Access.", metric: "Payment Infrastructure", img: "https://merchant-uat.finfan.io/logo-black.png" },
     { title: "Sazi Home", category: "Hospitality", desc: "Innovative lifestyle and hospitality brand.", metric: "Lifestyle Living", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAXVrsFWMSu-Kqh6PTpyw4f2WJxMzzy7eHmQ3sv6ncRqHx70le6DCm-TE4w-MQgp7qGyOj0xsZm3l_K-OFdNCJNmYg6U1DxIZTB01sAyx86Jbl0OJXk9dYhuoMUWP9et9a0v6dpjmnqVFX-97C3AsHRR8393QSJkprZ-DV2CpaKycI6xiiAIVN0gg5kgySB0UVtrgbb3dX6gJwXwM88ksCDU6svPhPXclGM2ffSIqRDoThLFZpVDqOKUqtWQKpXi1lLD_7C6PI4cI8L" },
-    { title: "Apptronik", category: "Robotics", desc: "Scaling Apollo humanoid robots with backing from B Capital and Google. Pioneering general-purpose robotics.", metric: "$350M Series A", img: "../assets/mercedesrobots01.jpg" },
+    { title: "Apptronik", category: "Robotics", desc: "Scaling Apollo humanoid robots with backing from B Capital and Google. Pioneering general-purpose robotics.", metric: "$350M Series A", img: apptronikImg },
     { title: "Blitz", category: "EV Logistics", desc: "Indonesian EV logistics company. Supporting capital raising and strategic business development.", metric: "Strategy & Capital", img: "https://www.third-derivative.org/hubfs/blitz-logoArtboard%201.png" }
   ],
   "vi": [
@@ -54,7 +55,7 @@ const portfolioData ={
     { title: "Levents Global", category: "Consumer", desc: "Thương hiệu thời trang GenZ hàng đầu với độ phủ khu vực mạnh mẽ và các collaboration độc quyền cùng Sanrio.", metric: "240 TỶ DOANH THU HÀNG NĂM (VND)", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDj5p1GI2bCRFsDQ5EiurYz8qQlk2eC3akZbgyYegrEKYfBvAPZ2hDGvGw-nYSEFD-2avU-sYbI5jSW28Qzso62sGGnfwd0QfokmN30WBZVDaQMoD_YNeXnQq2zJiFuOlYg29dX8mlQ-6SkelZ_566gT3kiJD_eyEO6qfP994Nx1FnYQEhhFyhnLzRqZ7mdgM1ptfYJroRRmbLml-TLNeo2JPgFHhhT_yY9NqbPefUISW_CFKNjhFdgLtEZhv-rmVnZB86PCCUhy6sr" },
     { title: "Finfan", category: "Fintech", desc: "Hỗ trợ thế hệ hạ tầng thanh toán quốc tế tiếp theo. Hỗ trợ Series A, kết nối mạng lưới VC và cố vấn founder.", metric: "HẠ TẦNG THANH TOÁN", img: "https://merchant-uat.finfan.io/logo-black.png" },
     { title: "Sazi Home", category: "Hospitality", desc: "Thương hiệu lifestyle và hospitality.", metric: "KHÔNG GIAN SỐNG", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAXVrsFWMSu-Kqh6PTpyw4f2WJxMzzy7eHmQ3sv6ncRqHx70le6DCm-TE4w-MQgp7qGyOj0xsZm3l_K-OFdNCJNmYg6U1DxIZTB01sAyx86Jbl0OJXk9dYhuoMUWP9et9a0v6dpjmnqVFX-97C3AsHRR8393QSJkprZ-DV2CpaKycI6xiiAIVN0gg5kgySB0UVtrgbb3dX6gJwXwM88ksCDU6svPhPXclGM2ffSIqRDoThLFZpVDqOKUqtWQKpXi1lLD_7C6PI4cI8L" },
-    { title: "Apptronik", category: "Robotics", desc: "Mở rộng robot hình người Apollo với sự hậu thuẫn từ B Capital và Google. Tiên phong trong robotics đa mục đích.", metric: "SERIES A 350 TRIỆU USD", img: "../assets/mercedesrobots01.jpg" },
+    { title: "Apptronik", category: "Robotics", desc: "Mở rộng robot hình người Apollo với sự hậu thuẫn từ B Capital và Google. Tiên phong trong robotics đa mục đích.", metric: "SERIES A 350 TRIỆU USD", img: apptronikImg },
     { title: "Blitz", category: "EV Logistics", desc: "Công ty logistics EV tại Indonesia. Hỗ trợ gọi vốn và phát triển chiến lược kinh doanh để mở rộng khu vực.", metric: "CHIẾN LƯỢC & VỐN", img: "https://www.third-derivative.org/hubfs/blitz-logoArtboard%201.png" }
   ]
 };
