@@ -268,7 +268,7 @@ export default function Home() {
               className="text-[42px] md:text-[64px] text-white mb-8 leading-[1.1] font-medium tracking-[-0.02em]"
               style={lang === "en" ? { fontFamily: "Merriweather Sans, sans-serif", fontWeight: 500 } : { fontFamily: "Akt, serif", fontWeight: 500 }}
             >
-              {lang === "en" ? "A Startup Program for Founders by Founders" : "Chương Trình Khởi Nghiệp Dành Cho Nhà Sáng Lập, Được Xây Dựng Bởi Chính Những Nhà Sáng Lập"}
+              {lang === "en" ? "A Startup Program for Founders by Founders" : "Chương Trình Dành Cho Nhà Sáng Lập, Bởi Những Nhà Sáng Lập"}
             </h1>
 
             <p className="text-[16px] text-[#d8d8d8] max-w-2xl mb-10 leading-relaxed">
