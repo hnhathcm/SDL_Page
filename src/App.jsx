@@ -11,9 +11,8 @@ import ScrollToTop from './components/ScrollToTop';
 import {useEffect} from "react";
 import {useLocation} from "react-router-dom";
 
-function usePageTracking() {
+function PageTracker() {
   const location = useLocation();
-
   useEffect(() => {
     if (typeof window.gtag === "function") {
       window.gtag("event", "page_view", {
@@ -21,7 +20,9 @@ function usePageTracking() {
       });
     }
   }, [location]);
+  return null; // renders nothing
 }
+
 
   
 
@@ -29,6 +30,7 @@ function App() {
   usePageTracking();
   return (
     <Router>
+      <PageTracker />
       <Navbar />
       <ScrollToTop />
       <Routes>
