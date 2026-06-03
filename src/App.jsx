@@ -17,10 +17,12 @@ function PageTracker() {
     if (typeof window.gtag === "function") {
       window.gtag("event", "page_view", {
         page_path: location.pathname + location.search,
+        page_location: window.location.href,  // 👈 full URL, GA4's primary key
+        page_title: location.pathname,         // 👈 use the path as the title instead
       });
     }
   }, [location]);
-  return null; // renders nothing
+  return null;
 }
 
 
