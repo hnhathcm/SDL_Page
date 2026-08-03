@@ -33,8 +33,13 @@ const Navbar = () => {
               {links.map((link) => (
                 <NavLink 
                   key={link.name} 
-                  to={link.path} 
-                  className="text-white/70 hover:text-white transition-colors text-sm uppercase tracking-wider"
+                  to={link.path}
+                  end={link.path === '/'}
+                  className={({ isActive }) =>
+                    isActive 
+                      ? "text-[#71c3fe] font-bold border-b-2 border-[#71c3fe] pb-1 text-sm uppercase tracking-wider transition-all" 
+                      : "text-white/70 hover:text-white transition-colors text-sm uppercase tracking-wider"
+                  }
                 >
                   {link.name}
                 </NavLink>
@@ -82,9 +87,14 @@ const Navbar = () => {
             {links.map((link) => (
               <NavLink 
                 key={link.name} 
-                to={link.path} 
+                to={link.path}
+                end={link.path === '/'}
                 onClick={() => setIsOpen(false)}
-                className="text-3xl text-white font-display"
+                className={({ isActive }) =>
+                  isActive 
+                    ? "text-3xl text-[#71c3fe] font-bold font-display border-l-4 border-[#71c3fe] pl-3" 
+                    : "text-3xl text-white/70 hover:text-white font-display pl-3"
+                }
               >
                 {link.name}
               </NavLink>
