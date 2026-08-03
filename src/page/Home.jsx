@@ -274,7 +274,7 @@ export default function Home() {
             <p className="text-[16px] text-[#d8d8d8] max-w-2xl mb-10 leading-relaxed">
               {lang === "en"
                 ? 'SonDoong Labs is an independent privately owned venture builder cum investment management company that aims to support early-stage and growth startups.'
-                : 'SonDoong Labs là một công ty xây dựng doanh nghiệp (venture builder) kết hợp quản lý đầu tư độc lập, thuộc sở hữu tư nhân, với sứ mệnh hỗ trợ các startup giai đoạn đầu và đang tăng trưởng phát triển bền vững. Labs là một công ty xây dựng doanh nghiệp độc lập và sở hữu tư nhân, kết hợp với quản lý đầu tư, nhằm hỗ trợ các startup giai đoạn đầu và có tiềm năng tăng trưởng.'}
+                : 'SonDoong Labs là một công ty xây dựng doanh nghiệp (venture builder) kết hợp quản lý đầu tư độc lập, thuộc sở hữu tư nhân, với sứ mệnh hỗ trợ các startup giai đoạn đầu và đang tăng trưởng phát triển bền vững.'}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
